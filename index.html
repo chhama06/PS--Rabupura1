@@ -62,3 +62,32 @@
     </section>
 </body>
 </html>
+<!-- Admission Notice Scrolling Text -->
+<div class="scrolling-text">
+  Admission Open for Session 2025–26 | Last Date: 30 September 2025
+</div>
+
+<style>
+.scrolling-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  color: red;
+  background-color: #fff3cd;
+  font-weight: bold;
+  padding: 10px;
+  animation: scroll-left 15s linear infinite;
+  font-size: 18px;
+  border-bottom: 2px solid red;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>
