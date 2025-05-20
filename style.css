@@ -213,9 +213,12 @@ p {
 }
 
 .school-image-grid img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 300px;   /* New: sets a max size */
+  width: 100%;        /* Keeps it responsive */
+  height: auto;       /* Keeps correct ratio */
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: auto;       /* Optional: centers image in grid */
 }
 
 .video-container {
