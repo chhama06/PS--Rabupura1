@@ -473,21 +473,32 @@
 }
 </style>
   <script>
+  <!-- Date and Clock Display -->
+<div style="position: absolute; top: 10px; left: 10px; font-weight: bold; line-height: 1.2;">
+  <div id="date"></div>
+  <div id="clock"></div>
+</div>
+
+<!-- Date and Clock Script -->
+<script>
   function updateDateTime() {
     const now = new Date();
 
+    // Format date in Hindi
     const date = now.toLocaleDateString('hi-IN', {
       day: 'numeric',
       month: 'long',
       year: 'numeric'
     });
 
+    // Format time in Hindi
     const time = now.toLocaleTimeString('hi-IN');
 
+    // Display date and time
     document.getElementById('date').innerHTML = date;
     document.getElementById('clock').innerHTML = time;
   }
 
   setInterval(updateDateTime, 1000);
   updateDateTime(); // Show immediately on load
-  </script>
+</script>
