@@ -2,897 +2,895 @@
 <html lang="hi">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Primary School Rabupura-1,Jewar</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      background: white;
-      font-family: 'Arial', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Primary School Rabupura-1,Jewar, Gautam Buddh Nagar, Uttar Pradesh</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            background: white;
+            font-family: 'Arial', sans-serif;
+            color: #333; /* Default text color */
+        }
 
-    /* Main container to fix website width and center it */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-    }
+        /* Main container to fix website width and center it */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
 
-    header {
-      display: flex;
-      align-items: center;
-      /* Vertically aligns items in the center */
-      justify-content: space-between;
-      /* Distribute space between items */
-      padding: 10px;
-      background: #f1f1f1;
-      flex-wrap: wrap;
-      /* Allows header elements to wrap to the next line on smaller screens */
-      position: relative;
-      /* Crucial for positioning the background image */
-      overflow: hidden;
-      /* Ensures background image doesn't bleed out */
-    }
+        header {
+            display: flex;
+            align-items: center;
+            /* Vertically aligns items */
+            justify-content: space-between;
+            /* Pushes items to the ends */
+            padding: 15px 20px;
+            background: #f1f1f1;
+            flex-wrap: wrap;
+            /* Allows header elements to wrap on smaller screens */
+            position: relative;
+            /* For z-index stacking */
+            overflow: hidden; /* Ensures background image inside elements doesn't spill */
+        }
 
-    /* Background image behind school name */
-    .school-name-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('school-background.jpg');
-      /* IMPORTANT: Replace 'school-background.jpg' with your actual image path */
-      background-size: cover;
-      background-position: center;
-      opacity: 0.3;
-      /* Adjust opacity for visibility */
-      z-index: 0;
-      /* Place behind other header elements */
-    }
+        /* Group for logos on the left side of the header */
+        .left-header-group {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between the logos */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            z-index: 2; /* Ensure these logos are above the school title background */
+        }
 
-    /* Bigger logos */
-    .logo {
-      width: 10vw;
-      /* Scalable logo size based on viewport width */
-      height: auto;
-      /* Maintain aspect ratio */
-      max-width: 130px;
-      /* Maximum width for desktop */
-      object-fit: contain;
-      flex-shrink: 0;
-      /* Prevent logos from shrinking too much */
-      z-index: 1;
-      /* Ensure logo is above the background image */
-    }
+        .header-logo {
+            width: 80px; /* Default size for smaller logos */
+            height: auto;
+            object-fit: contain;
+            flex-shrink: 0; /* Prevent from shrinking too much */
+        }
 
-    .school-title {
-      text-align: center;
-      flex-grow: 1;
-      /* Allows title to take up available space */
-      min-width: 300px;
-      /* Ensures title has a minimum width before wrapping/getting too small */
-      margin: 0 10px;
-      /* Adjust margin to create space around the title */
-      z-index: 1;
-      /* Ensure text is above the background image */
-      position: relative;
-      /* Needed for z-index to work correctly relative to its siblings */
-      padding: 5px 0; /* Add some padding to give text space from image edges */
-    }
+        /* Specific style for the main school logo (on the right) */
+        .school-logo {
+            width: 180px; /* Larger size for the school logo */
+            height: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+            margin-left: auto; /* Pushes it to the far right */
+            z-index: 2; /* Ensure it's above other elements */
+        }
 
-    .school-title h1 {
-      color: #000080; /* Darker blue for better visibility */
-      font-family: 'Georgia', serif;
-      margin: 0;
-      font-size: clamp(1.8em, 3vw, 2.8em); /* Responsive font size */
-      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), -1px -1px 3px rgba(255, 255, 255, 0.8); /* White shadow for contrast */
-    }
+        .school-title {
+            text-align: center;
+            flex-grow: 1; /* Allows title to take up available space */
+            min-width: 250px; /* Minimum width to prevent excessive squishing */
+            margin: 0 15px; /* Margin to separate from logos */
+            padding: 15px 10px; /* Padding inside the title box */
+            position: relative; /* For background image positioning */
+            z-index: 1; /* Ensure text is above background but below logos */
+            border-radius: 8px; /* Slightly rounded corners for the title box */
+            overflow: hidden; /* Hide anything outside title box */
+        }
 
-    .school-title p {
-      font-style: italic;
-      color: #000080; /* Darker blue for better visibility */
-      font-family: 'Comic Sans MS', cursive;
-      font-size: clamp(0.9em, 1.2vw, 1.2em); /* Responsive font size */
-      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* White shadow for contrast */
-    }
-
-    /* Container for the right-side logos and circular photos */
-    .right-header-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      z-index: 1;
-      /* Ensure content is above the background image */
-      position: relative;
-      /* Needed for z-index to work correctly relative to its siblings */
-    }
-
-    .right-header-group .top-logos {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .right-header-group .officer-photos {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    /* CSS for the circular photos below right logos */
-    .circular-logo-container {
-      width: 12vw;
-      /* Scalable width */
-      height: 12vw;
-      /* Maintain aspect ratio */
-      max-width: 150px;
-      /* Maximum size for desktop */
-      max-height: 150px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid #007BFF;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .circular-logo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .circular-logo-container + p { /* Style for the paragraph directly after .circular-logo-container */
-      font-size: 0.9em;
-      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* White shadow for contrast */
-      color: #000080; /* Darker blue for better visibility */
-    }
+        /* Background image specifically for the school name area */
+        .school-title::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('school-bg.jpg');
+            /* IMPORTANT: Replace with your actual background image path */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            /* Adjust opacity for visibility */
+            z-index: -1;
+            /* Place behind the text content of school-title */
+        }
 
 
-    nav {
-      background: #007BFF;
-      padding: 10px;
-      text-align: center;
-      display: flex;
-      flex-wrap: wrap;
-      /* Allow nav items to wrap */
-      justify-content: center;
-      /* Center nav items */
-      gap: 10px; /* Space between nav items */
-    }
+        .school-title h1 {
+            color: #000080;
+            /* Dark blue for visibility */
+            font-family: 'Georgia', serif;
+            margin: 0;
+            font-size: clamp(1.8em, 3vw, 2.8em);
+            /* Responsive font size */
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), -1px -1px 3px rgba(255, 255, 255, 0.8);
+            /* White shadow for contrast */
+        }
 
-    nav a {
-      color: white;
-      margin: 0; /* Reset margin as gap handles spacing */
-      padding: 5px 10px; /* Add padding for better touch area */
-      text-decoration: none;
-      font-weight: bold;
-      white-space: nowrap;
-      /* Prevent breaking text in nav links */
-      transition: background-color 0.3s ease; /* Smooth hover effect */
-      border-radius: 5px; /* Slightly rounded corners */
-    }
+        .school-title p {
+            font-style: italic;
+            color: #000080;
+            /* Dark blue for visibility */
+            font-family: 'Comic Sans MS', cursive;
+            font-size: clamp(0.9em, 1.2vw, 1.2em);
+            /* Responsive font size */
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            /* White shadow for contrast */
+        }
 
-    nav a:hover {
-      text-decoration: none;
-      background-color: #0056b3; /* Darker blue on hover */
-    }
+        /* Container for the right-side officer photos and names */
+        .officer-photos-group {
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            gap: 20px; /* Space between BSA and BEO sections */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: center; /* Center items when they wrap */
+            margin-left: 20px; /* Push this group slightly to the right */
+            z-index: 2; /* Ensure these are above the school title background */
+        }
 
-    .announcement {
-      background: yellow;
-      color: red;
-      font-weight: bold;
-      font-size: 1.1em;
-      padding: 5px;
-    }
+        .officer-details {
+            text-align: center;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
 
-    marquee {
-      font-size: 1.1em;
-    }
+        .circular-photo-container {
+            width: 100px;
+            /* Fixed size for circular photos */
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #007BFF;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px; /* Space between photo and name */
+        }
 
-    /* Styles for Staff Photos */
-    .staff-member {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
+        .circular-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .staff-member img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 15px;
-      border: 2px solid #007BFF;
-    }
-
-    .staff-member span {
-      font-weight: bold;
-      color: #333;
-    }
-
-    .staff-member p {
-      margin: 0;
-      color: #555;
-    }
-
-    /* Gallery styles - adjusted for medium size and navigation */
-    .gallery-section {
-      padding: 40px;
-      background-color: #f9f9f9;
-    }
-
-    .gallery-section h2 {
-      color: blue;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .gallery-container {
-      position: relative;
-      max-width: 800px;
-      margin: auto;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-
-    .gallery-slide {
-      display: none;
-      text-align: center;
-      padding-bottom: 10px;
-    }
-
-    .gallery-slide img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Navigation arrows for gallery */
-    .gallery-nav {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      z-index: 10;
-    }
-
-    .prev,
-    .next {
-      cursor: pointer;
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 24px;
-      transition: 0.6s ease;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-    }
-
-    .next {
-      border-radius: 3px 0 0 3px;
-    }
-
-    .prev:hover,
-    .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .caption {
-      text-align: center;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-      font-size: 1.1em;
-    }
-
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-
-    @keyframes fade {
-      from {
-        opacity: .4
-      }
-
-      to {
-        opacity: 1
-      }
-    }
-
-    /* --- Media Queries for Responsiveness --- */
-
-    /* For screens smaller than 992px (typical laptop breakpoint) */
-    @media (max-width: 992px) {
-      .logo {
-        width: 12vw;
-      }
-
-      .circular-logo-container {
-        width: 14vw;
-        height: 14vw;
-      }
-    }
+        .officer-details p {
+            margin: 0;
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #000080; /* Dark blue for names */
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.7); /* Subtle shadow for visibility */
+        }
 
 
-    /* For screens smaller than 768px (common tablet breakpoint) */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        /* Stack header elements vertically */
-        padding: 15px;
-        /* Adjust padding */
-      }
+        nav {
+            background: #007BFF;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            /* Allow nav items to wrap */
+            justify-content: center;
+            /* Center nav items */
+            gap: 10px;
+            /* Space between nav items */
+        }
 
-      .logo {
-        width: 15vw;
-        /* Adjust logo size for tablets/mobiles */
-        max-width: 100px;
-      }
+        nav a {
+            color: white;
+            padding: 8px 15px;
+            /* Add padding for better touch area */
+            text-decoration: none;
+            font-weight: bold;
+            white-space: nowrap;
+            /* Prevent breaking text in nav links */
+            transition: background-color 0.3s ease;
+            /* Smooth hover effect */
+            border-radius: 5px;
+            /* Slightly rounded corners */
+        }
 
-      .school-title {
-        min-width: unset; /* Remove min-width to allow more flexibility */
-        margin-top: 15px; /* Add more space from top logo */
-      }
+        nav a:hover {
+            text-decoration: none;
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
 
-      .school-title h1 {
-        font-size: clamp(1.5em, 5vw, 2.5em); /* Adjust heading size for better fit */
-      }
+        .announcement {
+            background: yellow;
+            color: red;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 5px;
+        }
 
-      .school-title p {
-        font-size: clamp(0.8em, 2vw, 1.1em); /* Adjust paragraph size */
-      }
+        marquee {
+            font-size: 1.1em;
+        }
 
-      .right-header-group {
-        margin-top: 15px;
-        /* Add more space from school title */
-      }
+        /* Styles for Staff Photos */
+        .staff-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
 
-      .right-header-group .top-logos,
-      .right-header-group .officer-photos {
-        gap: 5px; /* Reduce gap on smaller screens */
-      }
+        .staff-member img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #007BFF;
+        }
 
-      .circular-logo-container {
-        width: 18vw;
-        /* Adjust circular photo size for smaller screens */
-        height: 18vw;
-        max-width: 100px; /* Limit max size */
-        max-height: 100px; /* Limit max size */
-      }
+        .staff-member span {
+            font-weight: bold;
+            color: #333;
+        }
 
-      .circular-logo-container + p {
-        font-size: 0.8em;
-      }
+        .staff-member p {
+            margin: 0;
+            color: #555;
+        }
 
-      nav a {
-        margin: 4px 8px;
-        /* Adjust nav link spacing */
-        font-size: 0.85em;
-        /* Smaller font for nav */
-        padding: 4px 8px;
-      }
-    }
+        /* Gallery styles - adjusted for medium size and navigation */
+        .gallery-section {
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
 
-    /* For very small screens (mobile phones) */
-    @media (max-width: 480px) {
-      .logo {
-        width: 20vw;
-        /* Even smaller logos on tiny screens */
-        max-width: 80px;
-      }
+        .gallery-section h2 {
+            color: blue;
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-      .school-title h1 {
-        font-size: clamp(1.2em, 6vw, 2em); /* Further adjust heading size */
-      }
+        .gallery-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-      .school-title p {
-        font-size: clamp(0.7em, 3vw, 1em); /* Further adjust paragraph size */
-      }
+        .gallery-slide {
+            display: none;
+            text-align: center;
+            padding-bottom: 10px;
+        }
 
-      .circular-logo-container {
-        width: 20vw;
-        /* Even smaller circular photos */
-        height: 20vw;
-        max-width: 80px; /* Limit max size */
-        max-height: 80px; /* Limit max size */
-      }
+        .gallery-slide img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
 
-      .circular-logo-container + p {
-        font-size: 0.7em;
-      }
+        /* Navigation arrows for gallery */
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
 
-      nav a {
-        margin: 2px 5px;
-        /* Tighter spacing for nav */
-        font-size: 0.75em;
-        /* Even smaller font */
-        padding: 3px 6px;
-      }
+        .prev,
+        .next {
+            cursor: pointer;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.6s ease;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
 
-      .announcement,
-      marquee {
-        font-size: 0.9em;
-      }
-    }
-  </style>
+        .next {
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .caption {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 1.1em;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+
+        /* For screens smaller than 1024px (laptops/large tablets) */
+        @media (max-width: 1024px) {
+            .school-logo {
+                width: 150px; /* Slightly smaller on medium screens */
+            }
+
+            .header-logo {
+                width: 70px;
+            }
+
+            .circular-photo-container {
+                width: 90px;
+                height: 90px;
+            }
+
+            .officer-details p {
+                font-size: 0.85em;
+            }
+        }
+
+        /* For screens smaller than 768px (common tablet breakpoint) */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                /* Stack header elements vertically */
+                align-items: center; /* Center items when stacked */
+                padding: 10px;
+            }
+
+            .left-header-group {
+                width: 100%; /* Take full width */
+                justify-content: center; /* Center logos */
+                margin-bottom: 15px; /* Space before school title */
+            }
+
+            .header-logo {
+                width: 60px; /* Adjust logo size */
+            }
+
+            .school-title {
+                width: 100%; /* Take full width */
+                margin: 10px 0; /* Adjust margin */
+                min-width: unset; /* Remove min-width to allow full flexibility */
+            }
+
+            .school-logo {
+                order: -1; /* Pushes school logo to the top when stacked (flex-direction column) */
+                width: 120px; /* Smaller school logo on smaller screens */
+                margin-left: 0; /* Remove auto-margin */
+                margin-bottom: 15px; /* Add space below it */
+            }
+
+            .officer-photos-group {
+                width: 100%; /* Take full width */
+                justify-content: center; /* Center officer photos */
+                margin-left: 0; /* Remove left margin */
+                margin-top: 15px; /* Space after school title */
+            }
+
+            .circular-photo-container {
+                width: 80px;
+                height: 80px;
+            }
+
+            .officer-details p {
+                font-size: 0.8em;
+            }
+
+            nav a {
+                padding: 6px 10px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* For even smaller screens (mobile phones) */
+        @media (max-width: 480px) {
+            .header-logo {
+                width: 50px;
+            }
+
+            .school-logo {
+                width: 100px;
+            }
+
+            .school-title h1 {
+                font-size: clamp(1.2em, 5vw, 2em);
+            }
+
+            .school-title p {
+                font-size: clamp(0.7em, 2.5vw, 1em);
+            }
+
+            .circular-photo-container {
+                width: 70px;
+                height: 70px;
+            }
+
+            .officer-details p {
+                font-size: 0.75em;
+            }
+
+            nav a {
+                padding: 5px 8px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <div style="position: absolute; top: 10px; left: 10px; font-weight: bold; font-size: 18px; background-color: #f9f9f9; padding: 8px; border-radius: 5px; box-shadow: 0 0 5px #ccc; z-index: 100;">
-    <span id="date"></span> | <span id="clock"></span>
-  </div>
-
-  <div class="container">
-    <header>
-      <div class="school-name-background"></div>
-
-      <img src="logo1.png" alt="Left Logo" class="logo">
-      <div class="school-title">
-        <h1>Primary School Rabupura-1,Jewar</h1>
-        <p>Gautam Buddh Nagar, Uttar Pradesh</p> <p style="font-size: clamp(0.8em, 1.5vw, 1.1em);">जहां हर बच्चा चमकता है।</p>
-      </div>
-      <div class="right-header-group">
-        <div class="top-logos">
-          <img src="9202642886059603450.jpeg" alt="BSA Logo" class="logo">
-          <img src="2984672790716164213.jpeg" alt="BEO Logo" class="logo">
-        </div>
-        <div class="officer-photos">
-          <div style="text-align: center;">
-            <div class="circular-logo-container">
-              <img src="bsa-officer.png" alt="BSA Officer">
-            </div>
-            <p style="margin-top: 5px; font-weight: bold;">BSA<br>Rahul Kumar Panwar</p>
-          </div>
-          <div style="text-align: center;">
-            <div class="circular-logo-container">
-              <img src="beo-officer.png" alt="BEO Officer">
-            </div>
-            <p style="margin-top: 5px; font-weight: bold;">BEO<br>Mohd. Rashid</p>
-          </div>
-        </div>
-      </div>
-    </header>
-
-
-    <div class="announcement">
-      <marquee behavior="scroll" direction="left">🌞 ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा। 📢 प्रवेश 2025-26 हेतु 30 सितम्बर अंतिम तिथि है।</marquee>
+    <div style="position: absolute; top: 10px; left: 10px; font-weight: bold; font-size: 18px; background-color: #f9f9f9; padding: 8px; border-radius: 5px; box-shadow: 0 0 5px #ccc; z-index: 100;">
+        <span id="date"></span> | <span id="clock"></span>
     </div>
 
-    <nav>
-      <a href="#home">होम</a>
-      <a href="#about">हमारे बारे में</a>
-      <a href="#academics">शैक्षणिक पाठ्यक्रम</a>
-      <a href="#facilities">सुविधाएँ</a>
-      <a href="#medical">चिकित्सा</a>
-      <a href="#staff">स्टाफ</a>
-      <a href="#admission">प्रवेश</a>
-      <a href="#gallery">गैलरी</a>
-      <a href="#notices">सूचनाएं</a>
-      <a href="#contact">संपर्क</a>
-    </nav>
+    <div class="container">
+        <header>
+            <div class="left-header-group">
+                <img src="logo2.png" alt="Uttar Pradesh Government Logo" class="header-logo">
+                <img src="logo3.png" alt="Basic Shiksha Parishad Logo" class="header-logo">
+                <div class="officer-photos-group">
+                    <div class="officer-details">
+                        <div class="circular-photo-container">
+                            <img src="bsa-officer.png" alt="BSA Officer">
+                        </div>
+                        <p>BSA<br>Rahul Kumar Panwar</p>
+                    </div>
+                    <div class="officer-details">
+                        <div class="circular-photo-container">
+                            <img src="beo-officer.png" alt="BEO Officer">
+                        </div>
+                        <p>BEO<br>Mohd. Rashid</p>
+                    </div>
+                </div>
+            </div>
 
-    <section id="home" style="padding: 40px; text-align: center;">
-      <h2 style="color: blue;">प्रधानाचार्य का स्वागत संदेश</h2>
-      <p style="color: black; font-size: 18px; max-width: 800px; margin: auto; animation: fadeIn 2s;">
-        "आप सभी का इस ज्ञान के मंदिर में हार्दिक स्वागत है। शिक्षा ही वह दीप है जो अज्ञानता के अंधकार को दूर करता है।
-        आइए, मिलकर मेहनत करें, सपनों को साकार करें और उज्जवल भविष्य की ओर अग्रसर हों।"
-      </p>
-    </section>
+            <div class="school-title">
+                <h1>Primary School Rabupura-1,Jewar</h1>
+                <p>Gautam Buddh Nagar, Uttar Pradesh</p>
+                <p>जहां हर बच्चा चमकता है।</p>
+            </div>
 
-    <section id="notices" style="padding: 40px; background-color: #f9f9f9;">
-      <h2 style="color: blue; text-align: center;">सूचना पट्ट</h2>
-      <div style="max-width: 700px; margin: auto; background: white; border: 2px solid #007BFF; padding: 20px; border-radius: 10px;">
-        <ul style="color: black; font-size: 16px; text-align: left;">
-          <li>📢 <strong>प्रवेश सूचना:</strong> शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि 30 सितम्बर 2025।</li>
-          <li>🌞 <strong>अवकाश:</strong> ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।</li>
-          <li>📄 <strong>डाउनलोड:</strong> <a href="timetable.pdf" target="_blank">समय सारणी PDF</a> उपलब्ध है।</li>
-        </ul>
-      </div>
-    </section>
+            <img src="logo1.png" alt="School Logo" class="school-logo">
+        </header>
 
-    <section id="about" style="padding: 40px; background-color: #eef7ff;">
-      <h2 style="color: blue; text-align: center;">हमारे बारे में</h2>
-      <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; text-align: justify; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-        हमारा प्राथमिक विद्यालय रबूपुरा 1, जेवर, बेसिक शिक्षा परिषद उत्तर प्रदेश के अंतर्गत है। प्राथमिक विद्यालय रबूपura 1 का निर्माण 1965 में किया गया। यह शिक्षा के क्षेत्र में उत्कृष्टता की मिसाल है। यहाँ पर छात्रों को गुणवत्तापूर्ण शिक्षा, नैतिक मूल्यों और समग्र विकास के लिए एक प्रेरणादायक वातावरण प्रदान किया जाता है।<br><br>
-
-        हमारा उद्देश्य केवल पुस्तकीय ज्ञान देना नहीं, बल्कि विद्यार्थियों को आत्मनिर्भर, जिम्मेदार और समाज के लिए उपयोगी नागरिक बनाना है। विद्यालय में अनुभवी और समर्पित शिक्षकों की टीम है जो हर छात्र को उसकी प्रतिभा के अनुसार मार्गदर्शन देती है।<br><br>
-
-        आधुनिक सुविधाओं, पुस्तकालय, विज्ञान प्रयोगशालाओं, कंप्यूटर कक्ष और खेलकूद की गतिविधियों के माध्यम से हम छात्रों के सर्वांगीण विकास पर जोर देते हैं। हम यह मानते हैं कि शिक्षा एक यात्रा है, और हम हर छात्र के साथ मिलकर यह यात्रा सफल बनाने के लिए प्रतिबद्ध हैं।<br><br>
-
-        वर्तमान जेवर विधायक श्री धीरेंद्र सिंह जी ने यहीं से प्राथमिक शिक्षा प्राप्त की। <br><br>
-
-        <strong>शुल्क:</strong> विद्यालय में किसी भी तरह की फीस नहीं ली जाती है। सरकार द्वारा DBT के माध्यम से ₹1200 प्रत्येक छात्र को प्रति वर्ष दिए जाते हैं।
-      </div>
-    </section>
-
-    <section id="academics" style="padding: 40px; background-color: #fff7e6;">
-      <h2 style="color: blue; text-align: center;">शैक्षणिक पाठ्यक्रम</h2>
-      <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; text-align: justify; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-        हमारे विद्यालय में विद्यार्थियों को एक संतुलित, समृद्ध और समग्र पाठ्यक्रम प्रदान किया जाता है, जो उनके बौद्धिक, नैतिक, शारीरिक और रचनात्मक विकास पर केंद्रित है। हमारा शैक्षणिक ढांचा राष्ट्रीय शिक्षा नीति एवं शिक्षा बोर्ड द्वारा निर्धारित मानकों पर आधारित है।<br><br>
-
-        हम निम्नलिखित विषयों की शिक्षा प्रदान करते हैं:
-        <ul style="margin-left: 20px; margin-top: 10px;">
-          <li>हिंदी, अंग्रेज़ी और संस्कृत जैसी भाषाएँ</li>
-          <li>गणित और पर्यावरण अध्ययन</li>
-          <li>कला, शारीरिक शिक्षा एवं योग, पुस्तकालय</li>
-        </ul><br>
-
-        प्रत्येक कक्षा के लिए पाठ्यक्रम को इस तरह से तैयार किया गया है कि वह छात्रों में तार्किक सोच, समस्या समाधान की क्षमता, और जीवन कौशल को विकसित कर सके। साथ ही, हम परियोजना-आधारित शिक्षण, समूह कार्य और गतिविधि आधारित शिक्षण को भी बढ़ावा देते हैं, जिससे बच्चे अधिक रुचि और आत्मविश्वास के साथ सीख सकें।
-      </div>
-    </section>
-
-    <section id="facilities" style="padding: 40px; background-color: #e8f5e9;">
-      <h2 style="color: blue; text-align: center;">सुविधाएँ</h2>
-      <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-        <ul style="list-style: none; padding-left: 0;">
-          <li>🍛 पोषित आहार, फल, दूध (MDM)</li>
-          <li>🖥️ स्मार्ट कक्षाएं (75 इंच टच स्क्रीन LED और 55 इंच स्मार्ट LED)</li>
-          <li>🎨 रंगीन एवं आकर्षक कक्षाएँ</li>
-          <li>🪑 आरामदायक बेंच</li>
-          <li>🎠 विभिन्न प्रकार के झूले</li>
-          <li>🏀 खेल कूद सामग्री</li>
-          <li>🚰 पीने योग्य पानी</li>
-          <li>🚻 साफ़ एवं सुरक्षित शौचालय</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="medical" style="padding: 40px; background-color: #fff3f3;">
-      <h2 style="color: blue; text-align: center;">चिकित्सा</h2>
-      <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: justify;">
-        प्राथमिक विद्यालय रबूपुरा 1 में प्राथमिक चिकित्सा किट (First Aid Kit) उपलब्ध रहती है। सरकार द्वारा चलाए जा रहे अभियानों के तहत समय-समय पर छात्रों को निम्नलिखित स्वास्थ्य सेवाएं प्रदान की जाती हैं:
-        <ul style="margin-top: 15px; margin-left: 20px;">
-          <li>💉 आवश्यक टीकाकरण</li>
-          <li>💊 आयरन की गोलियां</li>
-          <li>🪱 पेट के कीड़ों की दवा (एलबेंडाजोल)</li>
-        </ul>
-        यह सभी सेवाएं पूर्णतः निःशुल्क प्रदान की जाती हैं और बच्चों के स्वास्थ्य की नियमित निगरानी की जाती है।
-      </div>
-    </section>
-
-    <section id="staff" style="padding: 40px; background-color: #f0f8ff;">
-      <h2 style="color: blue; text-align: center;">शिक्षक / स्टाफ</h2>
-      <div style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); font-size: 18px; color: black;">
-        <p style="text-align: center;">हमारे विद्यालय में अनुभवी और समर्पित शिक्षकों की एक सशक्त टीम है:</p>
-        <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
-          <li class="staff-member">
-            <img src="manisha-singh.jpg" alt="Manisha Singh">
-            <span><strong>Manisha Singh</strong> – प्रधानाध्यापक (Incharge Headmaster)</span>
-          </li>
-          <li class="staff-member">
-            <img src="manisha-rajput.jpg" alt="Manisha Rajput">
-            <span><strong>Manisha Rajput</strong> – सहायक अध्यापक (Assistant Teacher)</span>
-          </li>
-          <li class="staff-member">
-            <img src="chhama-rani-singh.jpg" alt="Chhama Rani Singh">
-            <span><strong>Chhama Rani Singh</strong> – सहायक अध्यापक (Assistant Teacher)</span>
-          </li>
-          <li class="staff-member">
-            <img src="hemlata-sharma.jpg" alt="Hemlata Sharma">
-            <span><strong>Hemlata Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
-          </li>
-          <li class="staff--member">
-            <img src="danvir-sharma.jpg" alt="Danvir Sharma">
-            <span><strong>Danvir Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
-          </li>
-          <li class="staff-member">
-            <img src="bhavna-sharma.jpg" alt="Bhavna Sharma">
-            <span><strong>Bhavna Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="admission" style="padding: 40px; background-color: #fefbe9;">
-      <h2 style="color: blue; text-align: center;">प्रवेश जानकारी</h2>
-      <div style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; font-size: 18px; color: black; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); line-height: 1.8;">
-        <p>📢 <strong>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: <span style="color:red;">30 सितम्बर 2025</span></strong></p>
-
-        <p>➤ <strong>प्रवेश कैसे लें:</strong> विद्यालय में आकर संपर्क करें।</p>
-
-        <p>➤ <strong>आवश्यक दस्तावेज़:</strong></p>
-        <ul style="margin-left: 20px;">
-          <li>आवेदक का आधार कार्ड (वैकल्पिक)</li>
-          <li>आयु प्रमाण (जन्म तिथि)</li>
-        </ul>
-
-        <p>➤ <strong>आवश्यक आयु:</strong> कक्षा 1 में दाखिले के लिए न्यूनतम 6 वर्ष</p>
-
-        <p>➤ <strong>विद्यालय समय:</strong></p>
-        <ul style="margin-left: 20px;">
-          <li>🕗 1 अप्रैल से 30 सितम्बर – सुबह 8:00 बजे से दोपहर 2:00 बजे तक</li>
-          <li>🕘 1 अक्टूबर से 31 मार्च – सुबह 9:00 बजे से दोपहर 3:00 बजे तक</li>
-        </ul>
-      </div>
-    </section>
-
-    <section style="padding: 20px; background-color: #fff0f0;">
-      <div style="background: red; color: white; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; font-size: 20px;">
-        📢
-        <marquee behavior="scroll" direction="left" scrollamount="6">
-          ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा। सभी को सूचित किया जाता है।
-        </marquee>
-      </div>
-    </section>
-
-    <section id="notice" style="padding: 40px; background-color: #e3f2fd;">
-      <h2 style="color: blue; text-align: center;">सूचना पट्ट (Notice Board)</h2>
-      <div style="max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); font-size: 18px; color: black;">
-        <ul style="list-style-type: '📌 '; padding-left: 20px;">
-          <li>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: 30 सितम्बर 2025</li>
-          <li>ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।</li>
-          <li>विद्यालय समय गर्मियों में: सुबह 8:00 बजे से 2:00 बजे तक।</li>
-          <li>विद्यालय समय सर्दियों में: सुबह 9:00 बजे से 3:00 बजे तक।</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="gallery" class="gallery-section">
-      <h2>गैलरी</h2>
-      <div class="gallery-container">
-        <div class="gallery-slide fade">
-          <a href="image1.jpg" download>
-            <img src="image1.jpg" alt="माता उन्मुखीकरण व खेल दिवस">
-          </a>
-          <p class="caption">माता उन्मुखीकरण व बाल दिवस का आयोजन</p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image2.jpg" download>
-            <img src="image2.jpg" alt="छात्रों का स्वागत ग्रीष्मावकाश के बाद">
-          </a>
-          <p class="caption">ग्रीष्मावकाश के बाद छात्रों का स्वागत</p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image3.jpg" download>
-            <img src="image3.jpg" alt="जेवर विधायक ठाकुर धीरेंद्र सिंह जी द्वारा विद्यालय का भ्रमण">
-          </a>
-          <p class="caption">जेवर विधायक ठाकुर धीरेंद्र सिंह जी द्वारा विद्यालय का भ्रमण।</p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image4.jpg" download>
-            <img src="image4.jpg" alt="गैलरी चित्र 4">
-          </a>
-          <p class="caption">विद्यालय द्वारा स्कूल चलो अभियान रैली का आयोजन </p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image5.jpg" download>
-            <img src="image5.jpg" alt="गैलरी चित्र 5">
-          </a>
-          <p class="caption">15 अगस्त </p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image6.jpg" download>
-            <img src="image6.jpg" alt="गैलरी चित्र 6">
-            <p class="caption">वृक्षारोपण</p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image7.jpg" download>
-            <img src="image7.jpg" alt="गैलरी चित्र 7">
-          </a>
-          <p class="caption">टीकाकरण</p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image8.jpg" download>
-            <img src="image8.jpg" alt="गैलरी चित्र 8">
-          </a>
-          <p class="caption">15 अगस्त</p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image9.jpg" download>
-            <img src="image9.jpg" alt="गैलरी चित्र 9">
-          </a>
-          <p class="caption">26 जनवरी </p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image10.jpg" download>
-            <img src="image10.jpg" alt="गैलरी चित्र 10">
-          </a>
-          <p class="caption">छात्रों को बाल मूवी दिखाते हुए</p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image11.jpg" download>
-            <img src="image11.jpg" alt="गैलरी चित्र 11">
-          </a>
-          <p class="caption">रंगोली बनाते हुए</p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image12.jpg" download>
-            <img src="image12.jpg" alt="गैलरी चित्र 12">
-          </a>
-          <p class="caption">शिक्षक-छात्र </p>
-        </div>
-        <div class="gallery-slide fade">
-          <a href="image13.jpg" download>
-            <img src="image13.jpg" alt="गैलरी चित्र 13">
-          </a>
-          <p class="caption">नारी सुरक्षा हेतु </p>
+        <div class="announcement">
+            <marquee behavior="scroll" direction="left">🌞 ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा। 📢 प्रवेश 2025-26 हेतु 30 सितम्बर अंतिम तिथि है।</marquee>
         </div>
 
-        <div class="gallery-nav">
-          <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
-          <span class="next" onclick="changeSlide(1)">&#10095;</span>
-        </div>
-      </div>
-    </section>
+        <nav>
+            <a href="#home">होम</a>
+            <a href="#about">हमारे बारे में</a>
+            <a href="#academics">शैक्षणिक पाठ्यक्रम</a>
+            <a href="#facilities">सुविधाएँ</a>
+            <a href="#medical">चिकित्सा</a>
+            <a href="#staff">स्टाफ</a>
+            <a href="#admission">प्रवेश</a>
+            <a href="#gallery">गैलरी</a>
+            <a href="#notices">सूचनाएं</a>
+            <a href="#contact">संपर्क</a>
+        </nav>
 
-    <section id="notices" class="notices-section">
-      <h2>सूचनाएँ और घोषणाएँ</h2>
+        <section id="home" style="padding: 40px; text-align: center;">
+            <h2 style="color: blue;">प्रधानाचार्य का स्वागत संदेश</h2>
+            <p style="color: black; font-size: 18px; max-width: 800px; margin: auto; animation: fadeIn 2s;">
+                "आप सभी का इस ज्ञान के मंदिर में हार्दिक स्वागत है। शिक्षा ही वह दीप है जो अज्ञानता के अंधकार को दूर करता है।
+                आइए, मिलकर मेहनत करें, सपनों को साकार करें और उज्जवल भविष्य की ओर अग्रसर हों।"
+            </p>
+        </section>
 
-      <div class="notice-marquee">
-        <marquee>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि 30 सितम्बर 2025।</marquee>
-        <marquee>ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक।</marquee>
-      </div>
+        <section id="notices" style="padding: 40px; background-color: #f9f9f9;">
+            <h2 style="color: blue; text-align: center;">सूचना पट्ट</h2>
+            <div style="max-width: 700px; margin: auto; background: white; border: 2px solid #007BFF; padding: 20px; border-radius: 10px;">
+                <ul style="color: black; font-size: 16px; text-align: left;">
+                    <li>📢 <strong>प्रवेश सूचना:</strong> शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि 30 सितम्बर 2025।</li>
+                    <li>🌞 <strong>अवकाश:</strong> ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।</li>
+                    <li>📄 <strong>डाउनलोड:</strong> <a href="timetable.pdf" target="_blank">समय सारणी PDF</a> उपलब्ध है।</li>
+                </ul>
+            </div>
+        </section>
 
-      <div class="notices-list">
-        <ul>
-          <li><a href="notice2.pdf" download>समाचार पत्रिका (डाउनलोड करें)</a></li>
-          <li><a href="notice3.pdf" download>विद्यालय शेड्यूल 2025 (डाउनलोड करें)</a></li>
-        </ul>
-      </div>
-    </section>
+        <section id="about" style="padding: 40px; background-color: #eef7ff;">
+            <h2 style="color: blue; text-align: center;">हमारे बारे में</h2>
+            <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; text-align: justify; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                हमारा प्राथमिक विद्यालय रबूपुरा 1, जेवर, बेसिक शिक्षा परिषद उत्तर प्रदेश के अंतर्गत है। प्राथमिक विद्यालय रबूपura 1 का निर्माण 1965 में किया गया। यह शिक्षा के क्षेत्र में उत्कृष्टता की मिसाल है। यहाँ पर छात्रों को गुणवत्तापूर्ण शिक्षा, नैतिक मूल्यों और समग्र विकास के लिए एक प्रेरणादायक वातावरण प्रदान किया जाता है।<br><br>
 
-    <section id="admission" class="admission-section">
-      <h2>प्र प्रवेश जानकारी</h2>
+                हमारा उद्देश्य केवल पुस्तकीय ज्ञान देना नहीं, बल्कि विद्यार्थियों को आत्मनिर्भर, जिम्मेदार और समाज के लिए उपयोगी नागरिक बनाना है। विद्यालय में अनुभवी और समर्पित शिक्षकों की टीम है जो हर छात्र को उसकी प्रतिभा के अनुसार मार्गदर्शन देती है।<br><br>
 
-      <p><strong>कैसे दाखिला लें?</strong><br> विद्यार्थी विद्यालय में आकर दाखिला ले सकते हैं।</p>
+                आधुनिक सुविधाओं, पुस्तकालय, विज्ञान प्रयोगशालाओं, कंप्यूटर कक्ष और खेलकूद की गतिविधियों के माध्यम से हम छात्रों के सर्वांगीण विकास पर जोर देते हैं। हम यह मानते हैं कि शिक्षा एक यात्रा है, और हम हर छात्र के साथ मिलकर यह यात्रा सफल बनाने के लिए प्रतिबद्ध हैं।<br><br>
 
-      <p><strong>आवश्यक दस्तावेज:</strong><br>
-        - आवेदक का आधार कार्ड (वैकल्पिक)<br>
-        - आयु 6 वर्ष कक्षा 1 में दाखिले के लिए।<br>
-      </p>
+                वर्तमान जेवर विधायक श्री धीरेंद्र सिंह जी ने यहीं से प्राथमिक शिक्षा प्राप्त की। <br><br>
 
-      <p><strong>विद्यालय समय:</strong><br>
-        - 1 अप्रैल से 30 सितम्बर तक: 8:00 AM से 2:00 PM<br>
-        - 01 अक्टूबर से 31 मार्च तक: 9:00 AM से 3:00 PM<br>
-      </p>
+                <strong>शुल्क:</strong> विद्यालय में किसी भी तरह की फीस नहीं ली जाती है। सरकार द्वारा DBT के माध्यम से ₹1200 प्रत्येक छात्र को प्रति वर्ष दिए जाते हैं।
+            </div>
+        </section>
 
-      <p><strong>नोट:</strong><br>
-        - विद्यालय में कोई भी फीस नहीं ली जाती है। सरकार द्वारा DBT के माध्यम से ₹1200 प्रति वर्ष छात्र को दिया जाता है।
-      </p>
+        <section id="academics" style="padding: 40px; background-color: #fff7e6;">
+            <h2 style="color: blue; text-align: center;">शैक्षणिक पाठ्यक्रम</h2>
+            <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; text-align: justify; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                हमारे विद्यालय में विद्यार्थियों को एक संतुलित, समृद्ध और समग्र पाठ्यक्रम प्रदान किया जाता है, जो उनके बौद्धिक, नैतिक, शारीरिक और रचनात्मक विकास पर केंद्रित है। हमारा शैक्षणिक ढांचा राष्ट्रीय शिक्षा नीति एवं शिक्षा बोर्ड द्वारा निर्धारित मानकों पर आधारित है।<br><br>
 
-      <div class="admission-contact">
-        <p><strong>हमसे संपर्क करें:</strong><br>
-          आप हमें ईमेल कर सकते हैं: <a href="mail to:rabupuraa1@gmail.com">rabupuraa1@gmail.com</a>
-        </p>
-      </div>
-    </section>
+                हम निम्नलिखित विषयों की शिक्षा प्रदान करते हैं:
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>हिंदी, अंग्रेज़ी और संस्कृत जैसी भाषाएँ</li>
+                    <li>गणित और पर्यावरण अध्ययन</li>
+                    <li>कला, शारीरिक शिक्षा एवं योग, पुस्तकालय</li>
+                </ul><br>
 
-    <section id="feedback" class="feedback-section">
-      <h2>संपर्क करें और प्रतिक्रिया दें</h2>
+                प्रत्येक कक्षा के लिए पाठ्यक्रम को इस तरह से तैयार किया गया है कि वह छात्रों में तार्किक सोच, समस्या समाधान की क्षमता, और जीवन कौशल को विकसित कर सके। साथ ही, हम परियोजना-आधारित शिक्षण, समूह कार्य और गतिविधि आधारित शिक्षण को भी बढ़ावा देते हैं, जिससे बच्चे अधिक रुचि और आत्मविश्वास के साथ सीख सकें।
+            </div>
+        </section>
 
-      <p>आप हमें ईमेल कर सकते हैं: <a href="mailto:rabupuraa1@gmail.com">rabupuraa1@gmail.com</a></p>
+        <section id="facilities" style="padding: 40px; background-color: #e8f5e9;">
+            <h2 style="color: blue; text-align: center;">सुविधाएँ</h2>
+            <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                <ul style="list-style: none; padding-left: 0;">
+                    <li>🍛 पोषित आहार, फल, दूध (MDM)</li>
+                    <li>🖥️ स्मार्ट कक्षाएं (75 इंच टच स्क्रीन LED और 55 इंच स्मार्ट LED)</li>
+                    <li>🎨 रंगीन एवं आकर्षक कक्षाएँ</li>
+                    <li>🪑 आरामदायक बेंच</li>
+                    <li>🎠 विभिन्न प्रकार के झूले</li>
+                    <li>🏀 खेल कूद सामग्री</li>
+                    <li>🚰 पीने योग्य पानी</li>
+                    <li>🚻 साफ़ एवं सुरक्षित शौचालय</li>
+                </ul>
+            </div>
+        </section>
 
-      <h3>फीडबैक फॉर्म</h3>
-      <form action="/submit-feedback" method="POST" class="feedback-form">
-        <div>
-          <label for="name">पूरा नाम</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div>
-          <label for="email">ईमेल पता</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-          <label for="message">आपकी प्रतिक्रिया</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-        </div>
-        <div>
-          <button type="submit">प्रस्तुत करें</button>
-        </div>
-      </form>
-    </section>
+        <section id="medical" style="padding: 40px; background-color: #fff3f3;">
+            <h2 style="color: blue; text-align: center;">चिकित्सा</h2>
+            <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: justify;">
+                प्राथमिक विद्यालय रबूपुरा 1 में प्राथमिक चिकित्सा किट (First Aid Kit) उपलब्ध रहती है। सरकार द्वारा चलाए जा रहे अभियानों के तहत समय-समय पर छात्रों को निम्नलिखित स्वास्थ्य सेवाएं प्रदान की जाती हैं:
+                <ul style="margin-top: 15px; margin-left: 20px;">
+                    <li>💉 आवश्यक टीकाकरण</li>
+                    <li>💊 आयरन की गोलियां</li>
+                    <li>🪱 पेट के कीड़ों की दवा (एलबेंडाजोल)</li>
+                </ul>
+                यह सभी सेवाएं पूर्णतः निःशुल्क प्रदान की जाती हैं और बच्चों के स्वास्थ्य की नियमित निगरानी की जाती है।
+            </div>
+        </section>
 
-    <footer id="footer" class="footer-section">
-      <div class="footer-content">
-        <p>&copy; 2025 PS Rabupura 1 Jewar. All Rights Reserved.</p>
-        <p>
-          Designed by
-          <a href="https://github.com/Chhama06" target="_blank" style="color: yellow; font-weight: bold;">
-            Chhama Rani Singh
-          </a>
-        </p>
+        <section id="staff" style="padding: 40px; background-color: #f0f8ff;">
+            <h2 style="color: blue; text-align: center;">शिक्षक / स्टाफ</h2>
+            <div style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); font-size: 18px; color: black;">
+                <p style="text-align: center;">हमारे विद्यालय में अनुभवी और समर्पित शिक्षकों की एक सशक्त टीम है:</p>
+                <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
+                    <li class="staff-member">
+                        <img src="manisha-singh.jpg" alt="Manisha Singh">
+                        <span><strong>Manisha Singh</strong> – प्रधानाध्यापक (Incharge Headmaster)</span>
+                    </li>
+                    <li class="staff-member">
+                        <img src="manisha-rajput.jpg" alt="Manisha Rajput">
+                        <span><strong>Manisha Rajput</strong> – सहायक अध्यापक (Assistant Teacher)</span>
+                    </li>
+                    <li class="staff-member">
+                        <img src="chhama-rani-singh.jpg" alt="Chhama Rani Singh">
+                        <span><strong>Chhama Rani Singh</strong> – सहायक अध्यापक (Assistant Teacher)</span>
+                    </li>
+                    <li class="staff-member">
+                        <img src="hemlata-sharma.jpg" alt="Hemlata Sharma">
+                        <span><strong>Hemlata Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
+                    </li>
+                    <li class="staff-member">
+                        <img src="danvir-sharma.jpg" alt="Danvir Sharma">
+                        <span><strong>Danvir Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
+                    </li>
+                    <li class="staff-member">
+                        <img src="bhavna-sharma.jpg" alt="Bhavna Sharma">
+                        <span><strong>Bhavna Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-        <div class="social-media">
-          <a href="https://facebook.com" target="_blank">Facebook</a> |
-          <a href="https://twitter.com" target="_blank">Twitter</a> |
-          <a href="https://instagram.com" target="_blank">Instagram</a>
-        </div>
-      </div>
-    </footer>
-  </div>
-  <script>
-    function updateDateTime() {
-      const now = new Date();
+        <section id="admission" style="padding: 40px; background-color: #fefbe9;">
+            <h2 style="color: blue; text-align: center;">प्रवेश जानकारी</h2>
+            <div style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; font-size: 18px; color: black; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); line-height: 1.8;">
+                <p>📢 <strong>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: <span style="color:red;">30 सितम्बर 2025</span></strong></p>
 
-      // Format date in Hindi (dd Month, weekday)
-      const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      };
-      const date = now.toLocaleDateString('hi-IN', options);
+                <p>➤ <strong>प्रवेश कैसे लें:</strong> विद्यालय में आकर संपर्क करें।</p>
 
-      // Format time in HH:MM:SS format
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      const time = hours + ":" + minutes + ":" + seconds;
+                <p>➤ <strong>आवश्यक दस्तावेज़:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>आवेदक का आधार कार्ड (वैकल्पिक)</li>
+                    <li>आयु प्रमाण (जन्म तिथि)</li>
+                </ul>
 
-      // Set values
-      document.getElementById('date').textContent = date;
-      document.getElementById('clock').textContent = time;
-    }
+                <p>➤ <strong>आवश्यक आयु:</strong> कक्षा 1 में दाखिले के लिए न्यूनतम 6 वर्ष</p>
 
-    setInterval(updateDateTime, 1000);
-    updateDateTime();
-  </script>
+                <p>➤ <strong>विद्यालय समय:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>🕗 1 अप्रैल से 30 सितम्बर – सुबह 8:00 बजे से दोपहर 2:00 बजे तक</li>
+                    <li>🕘 1 अक्टूबर से 31 मार्च – सुबह 9:00 बजे से दोपहर 3:00 बजे तक</li>
+                </ul>
+            </div>
+        </section>
 
-  <script>
-    let slideIndex = 0;
-    let autoSlideTimeout; // To store the timeout ID for auto-slide
+        <section style="padding: 20px; background-color: #fff0f0;">
+            <div style="background: red; color: white; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; font-size: 20px;">
+                📢
+                <marquee behavior="scroll" direction="left" scrollamount="6">
+                    ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा। सभी को सूचित किया जाता है।
+                </marquee>
+            </div>
+        </section>
 
-    function showSlides() {
-      let slides = document.getElementsByClassName("gallery-slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-      slides[slideIndex - 1].style.display = "block";
-      autoSlideTimeout = setTimeout(showSlides, 3000); // Change image every 3 seconds
-    }
+        <section id="notice" style="padding: 40px; background-color: #e3f2fd;">
+            <h2 style="color: blue; text-align: center;">सूचना पट्ट (Notice Board)</h2>
+            <div style="max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); font-size: 18px; color: black;">
+                <ul style="list-style-type: '📌 '; padding-left: 20px;">
+                    <li>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: 30 सितम्बर 2025</li>
+                    <li>ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।</li>
+                    <li>विद्यालय समय गर्मियों में: सुबह 8:00 बजे से 2:00 बजे तक।</li>
+                    <li>विद्यालय समय सर्दियों में: सुबह 9:00 बजे से 3:00 बजे तक।</li>
+                </ul>
+            </div>
+        </section>
 
-    // Function for manual slide change
-    function changeSlide(n) {
-      clearTimeout(autoSlideTimeout); // Stop auto-slide on manual navigation
-      let slides = document.getElementsByClassName("gallery-slide");
-      slideIndex += n; // Update index based on n (-1 for prev, 1 for next)
+        <section id="gallery" class="gallery-section">
+            <h2>गैलरी</h2>
+            <div class="gallery-container">
+                <div class="gallery-slide fade">
+                    <a href="image1.jpg" download>
+                        <img src="image1.jpg" alt="माता उन्मुखीकरण व खेल दिवस">
+                    </a>
+                    <p class="caption">माता उन्मुखीकरण व बाल दिवस का आयोजन</p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image2.jpg" download>
+                        <img src="image2.jpg" alt="छात्रों का स्वागत ग्रीष्मावकाश के बाद">
+                    </a>
+                    <p class="caption">ग्रीष्मावकाश के बाद छात्रों का स्वागत</p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image3.jpg" download>
+                        <img src="image3.jpg" alt="जेवर विधायक ठाकुर धीरेंद्र सिंह जी द्वारा विद्यालय का भ्रमण">
+                    </a>
+                    <p class="caption">जेवर विधायक ठाकुर धीरेंद्र सिंह जी द्वारा विद्यालय का भ्रमण।</p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image4.jpg" download>
+                        <img src="image4.jpg" alt="गैलरी चित्र 4">
+                    </a>
+                    <p class="caption">विद्यालय द्वारा स्कूल चलो अभियान रैली का आयोजन </p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image5.jpg" download>
+                        <img src="image5.jpg" alt="गैलरी चित्र 5">
+                    </a>
+                    <p class="caption">15 अगस्त </p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image6.jpg" download>
+                        <img src="image6.jpg" alt="गैलरी चित्र 6">
+                        <p class="caption">वृक्षारोपण</p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image7.jpg" download>
+                        <img src="image7.jpg" alt="गैलरी चित्र 7">
+                    </a>
+                    <p class="caption">टीकाकरण</p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image8.jpg" download>
+                        <img src="image8.jpg" alt="गैलरी चित्र 8">
+                    </a>
+                    <p class="caption">15 अगस्त</p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image9.jpg" download>
+                        <img src="image9.jpg" alt="गैलरी चित्र 9">
+                    </a>
+                    <p class="caption">26 जनवरी </p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image10.jpg" download>
+                        <img src="image10.jpg" alt="गैलरी चित्र 10">
+                    </a>
+                    <p class="caption">छात्रों को बाल मूवी दिखाते हुए</p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image11.jpg" download>
+                        <img src="image11.jpg" alt="गैलरी चित्र 11">
+                    </a>
+                    <p class="caption">रंगोली बनाते हुए</p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image12.jpg" download>
+                        <img src="image12.jpg" alt="गैलरी चित्र 12">
+                    </a>
+                    <p class="caption">शिक्षक-छात्र </p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image13.jpg" download>
+                        <img src="image13.jpg" alt="गैलरी चित्र 13">
+                    </a>
+                    <p class="caption">नारी सुरक्षा हेतु </p>
+                </div>
 
-      if (slideIndex > slides.length) {
-        slideIndex = 1; // Loop back to the first slide
-      }
-      if (slideIndex < 1) {
-        slideIndex = slides.length; // Loop to the last slide
-      }
+                <div class="gallery-nav">
+                    <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+                    <span class="next" onclick="changeSlide(1)">&#10095;</span>
+                </div>
+            </div>
+        </section>
 
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex - 1].style.display = "block";
+        <section id="notices" class="notices-section">
+            <h2>सूचनाएँ और घोषणाएँ</h2>
 
-      // Restart auto-slide after a short delay (optional, but good for user experience)
-      autoSlideTimeout = setTimeout(showSlides, 5000); // Resume auto-slide after 5 seconds
-    }
+            <div class="notice-marquee">
+                <marquee>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि 30 सितम्बर 2025।</marquee>
+                <marquee>ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक।</marquee>
+            </div>
 
-    // Initial call to display the first slide
-    showSlides();
-  </script>
+            <div class="notices-list">
+                <ul>
+                    <li><a href="notice2.pdf" download>समाचार पत्रिका (डाउनलोड करें)</a></li>
+                    <li><a href="notice3.pdf" download>विद्यालय शेड्यूल 2025 (डाउनलोड करें)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="admission" class="admission-section">
+            <h2>प्रवेश जानकारी</h2>
+
+            <p><strong>कैसे दाखिला लें?</strong><br> विद्यार्थी विद्यालय में आकर दाखिला ले सकते हैं।</p>
+
+            <p><strong>आवश्यक दस्तावेज:</strong><br>
+                - आवेदक का आधार कार्ड (वैकल्पिक)<br>
+                - आयु 6 वर्ष कक्षा 1 में दाखिले के लिए।<br>
+            </p>
+
+            <p><strong>विद्यालय समय:</strong><br>
+                - 1 अप्रैल से 30 सितम्बर तक: 8:00 AM से 2:00 PM<br>
+                - 01 अक्टूबर से 31 मार्च तक: 9:00 AM से 3:00 PM<br>
+            </p>
+
+            <p><strong>नोट:</strong><br>
+                - विद्यालय में कोई भी फीस नहीं ली जाती है। सरकार द्वारा DBT के माध्यम से ₹1200 प्रति वर्ष छात्र को दिया जाता है।
+            </p>
+
+            <div class="admission-contact">
+                <p><strong>हमसे संपर्क करें:</strong><br>
+                    आप हमें ईमेल कर सकते हैं: <a href="mailto:rabupuraa1@gmail.com">rabupuraa1@gmail.com</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="feedback" class="feedback-section">
+            <h2>संपर्क करें और प्रतिक्रिया दें</h2>
+
+            <p>आप हमें ईमेल कर सकते हैं: <a href="mailto:rabupuraa1@gmail.com">rabupuraa1@gmail.com</a></p>
+
+            <h3>फीडबैक फॉर्म</h3>
+            <form action="/submit-feedback" method="POST" class="feedback-form">
+                <div>
+                    <label for="name">पूरा नाम</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">ईमेल पता</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">आपकी प्रतिक्रिया</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">प्रस्तुत करें</button>
+                </div>
+            </form>
+        </section>
+
+        <footer id="footer" class="footer-section">
+            <div class="footer-content">
+                <p>&copy; 2025 PS Rabupura 1 Jewar. All Rights Reserved.</p>
+                <p>
+                    Designed by
+                    <a href="https://github.com/Chhama06" target="_blank" style="color: yellow; font-weight: bold;">
+                        Chhama Rani Singh
+                    </a>
+                </p>
+
+                <div class="social-media">
+                    <a href="https://facebook.com" target="_blank">Facebook</a> |
+                    <a href="https://twitter.com" target="_blank">Twitter</a> |
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+
+            // Format date in Hindi (dd Month, weekday)
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            const date = now.toLocaleDateString('hi-IN', options);
+
+            // Format time in HH:MM:SS format
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const time = hours + ":" + minutes + ":" + seconds;
+
+            // Set values
+            document.getElementById('date').textContent = date;
+            document.getElementById('clock').textContent = time;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+
+    <script>
+        let slideIndex = 0;
+        let autoSlideTimeout; // To store the timeout ID for auto-slide
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("gallery-slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            autoSlideTimeout = setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        // Function for manual slide change
+        function changeSlide(n) {
+            clearTimeout(autoSlideTimeout); // Stop auto-slide on manual navigation
+            let slides = document.getElementsByClassName("gallery-slide");
+            slideIndex += n; // Update index based on n (-1 for prev, 1 for next)
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1; // Loop back to the first slide
+            }
+            if (slideIndex < 1) {
+                slideIndex = slides.length; // Loop to the last slide
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+
+            // Restart auto-slide after a short delay (optional, but good for user experience)
+            autoSlideTimeout = setTimeout(showSlides, 5000); // Resume auto-slide after 5 seconds
+        }
+
+        // Initial call to display the first slide
+        showSlides();
+    </script>
 
 </body>
 
-</html>
+  </html>
+  
