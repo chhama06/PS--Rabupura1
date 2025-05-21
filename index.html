@@ -21,29 +21,28 @@
     function updateDateTime() {
       const now = new Date();
 
-      // Format date in Hindi
-      const date = now.toLocaleDateString('hi-IN', {
+      // Format date in Hindi (dd Month yyyy, weekday)
+      const options = {
         weekday: 'long',
-        day: 'numeric',
+        year: 'numeric',
         month: 'long',
-        year: 'numeric'
-      });
+        day: 'numeric'
+      };
+      const date = now.toLocaleDateString('hi-IN', options);
 
-      // Format time in Hindi (12-hour format)
-      const time = now.toLocaleTimeString('hi-IN', {
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        hour12: true
-      });
+      // Format time in HH:MM:SS format
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const time = hours + ":" + minutes + ":" + seconds;
 
-      // Display date and time
+      // Set values
       document.getElementById('date').textContent = date;
       document.getElementById('clock').textContent = time;
     }
 
     setInterval(updateDateTime, 1000);
-    updateDateTime(); // Show immediately on load
+    updateDateTime();
   </script>
 
 </body>
