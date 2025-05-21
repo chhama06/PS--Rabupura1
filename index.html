@@ -5,6 +5,10 @@
   <!DOCTYPE html>
 <html lang="hi">
 <head>
+  <div style="position: absolute; top: 10px; left: 10px; font-weight: bold; line-height: 1.2;">
+  <div id="date"></div>
+  <div id="clock"></div>
+  </div>
   <meta charset="UTF-8" />
   <title>24 घंटे वाला क्लॉक</title>
 </head>
@@ -472,3 +476,22 @@
   transform: scale(1.05);
 }
 </style>
+  <script>
+  function updateDateTime() {
+    const now = new Date();
+
+    const date = now.toLocaleDateString('hi-IN', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+
+    const time = now.toLocaleTimeString('hi-IN');
+
+    document.getElementById('date').innerHTML = date;
+    document.getElementById('clock').innerHTML = time;
+  }
+
+  setInterval(updateDateTime, 1000);
+  updateDateTime(); // Show immediately on load
+  </script>
