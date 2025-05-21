@@ -4,14 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Primary School Rabupura-1,Jewar,Gautam Buddh Nagar, Uttar Pradesh</title>
+  <title>Primary School Rabupura-1,Jewar</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
       background: white;
       font-family: 'Arial', sans-serif;
-      box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
     }
 
     /* Main container to fix website width and center it */
@@ -24,100 +23,139 @@
 
     header {
       display: flex;
-      flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
       align-items: center;
-      justify-content: space-around;
+      /* Vertically aligns items in the center */
+      justify-content: space-between;
+      /* Distribute space between items */
       padding: 10px;
       background: #f1f1f1;
-      position: relative; /* Needed for absolute positioning of background image */
-      overflow: hidden; /* Hide overflowing parts of the background image */
+      flex-wrap: wrap;
+      /* Allows header elements to wrap to the next line on smaller screens */
+      position: relative;
+      /* Crucial for positioning the background image */
+      overflow: hidden;
+      /* Ensures background image doesn't bleed out */
     }
 
-    header::before {
-      content: '';
+    /* Background image behind school name */
+    .school-name-background {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('school-bg.jpg'); /* Your background image */
+      background-image: url('school-background.jpg');
+      /* IMPORTANT: Replace 'school-background.jpg' with your actual image path */
       background-size: cover;
       background-position: center;
-      filter: brightness(0.7); /* Darken the background to make text more visible */
-      z-index: 0; /* Place behind content */
-    }
-
-    header > * { /* Target direct children of header to bring them above the background */
-      position: relative;
-      z-index: 1;
+      opacity: 0.3;
+      /* Adjust opacity for visibility */
+      z-index: 0;
+      /* Place behind other header elements */
     }
 
     /* Bigger logos */
     .logo {
-      width: 80px; /* Adjusted for better responsiveness */
-      height: 80px; /* Adjusted for better responsiveness */
+      width: 10vw;
+      /* Scalable logo size based on viewport width */
+      height: auto;
+      /* Maintain aspect ratio */
+      max-width: 130px;
+      /* Maximum width for desktop */
       object-fit: contain;
-      flex-shrink: 0; /* Prevent shrinking on smaller screens */
-    }
-
-    /* Styles for circular logos and text below them */
-    .circular-logo {
-      width: 60px; /* Adjusted for better responsiveness */
-      height: 60px; /* Adjusted for better responsiveness */
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #007BFF;
+      flex-shrink: 0;
+      /* Prevent logos from shrinking too much */
+      z-index: 1;
+      /* Ensure logo is above the background image */
     }
 
     .school-title {
       text-align: center;
-      flex-grow: 1; /* Allows the title to take up available space */
-      min-width: 250px; /* Minimum width before wrapping */
-      margin: 10px; /* Add some margin */
+      flex-grow: 1;
+      /* Allows title to take up available space */
+      min-width: 300px;
+      /* Ensures title has a minimum width before wrapping/getting too small */
+      margin: 0 10px;
+      /* Adjust margin to create space around the title */
+      z-index: 1;
+      /* Ensure text is above the background image */
+      position: relative;
+      /* Needed for z-index to work correctly relative to its siblings */
+      padding: 5px 0; /* Add some padding to give text space from image edges */
     }
 
     .school-title h1 {
-      color: #FFD700; /* Gold color for better visibility on dark background */
+      color: #000080; /* Darker blue for better visibility */
       font-family: 'Georgia', serif;
       margin: 0;
-      font-size: 2em; /* Responsive font size */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better readability */
+      font-size: clamp(1.8em, 3vw, 2.8em); /* Responsive font size */
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), -1px -1px 3px rgba(255, 255, 255, 0.8); /* White shadow for contrast */
     }
 
     .school-title p {
       font-style: italic;
-      color: #FFFFFF; /* White color for better visibility */
+      color: #000080; /* Darker blue for better visibility */
       font-family: 'Comic Sans MS', cursive;
-      font-size: 1.2em; /* Responsive font size */
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      font-size: clamp(0.9em, 1.2vw, 1.2em); /* Responsive font size */
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* White shadow for contrast */
     }
 
-    /* Officer section within header */
-    .officer-section {
+    /* Container for the right-side logos and circular photos */
+    .right-header-group {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px; /* Space between logo row and officer row */
+      flex-shrink: 0;
+      z-index: 1;
+      /* Ensure content is above the background image */
+      position: relative;
+      /* Needed for z-index to work correctly relative to its siblings */
     }
 
-    .officer-row {
+    .right-header-group .top-logos {
       display: flex;
-      gap: 15px; /* Space between officer logos */
-      flex-wrap: wrap; /* Allow officers to wrap */
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
       justify-content: center;
     }
 
-    .officer-info {
-      text-align: center;
+    .right-header-group .officer-photos {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .officer-info p {
-      margin-top: 5px;
-      font-weight: bold;
-      font-size: 0.8em; /* Responsive font size */
-      color: #FFFFFF; /* White color for better visibility */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    /* CSS for the circular photos below right logos */
+    .circular-logo-container {
+      width: 12vw;
+      /* Scalable width */
+      height: 12vw;
+      /* Maintain aspect ratio */
+      max-width: 150px;
+      /* Maximum size for desktop */
+      max-height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #007BFF;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circular-logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .circular-logo-container + p { /* Style for the paragraph directly after .circular-logo-container */
+      font-size: 0.9em;
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* White shadow for contrast */
+      color: #000080; /* Darker blue for better visibility */
     }
 
 
@@ -127,32 +165,39 @@
       text-align: center;
       display: flex;
       flex-wrap: wrap;
+      /* Allow nav items to wrap */
       justify-content: center;
+      /* Center nav items */
       gap: 10px; /* Space between nav items */
     }
 
     nav a {
       color: white;
+      margin: 0; /* Reset margin as gap handles spacing */
+      padding: 5px 10px; /* Add padding for better touch area */
       text-decoration: none;
       font-weight: bold;
-      padding: 5px 10px;
-      white-space: nowrap; /* Prevents text from wrapping within a link */
+      white-space: nowrap;
+      /* Prevent breaking text in nav links */
+      transition: background-color 0.3s ease; /* Smooth hover effect */
+      border-radius: 5px; /* Slightly rounded corners */
     }
 
     nav a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      background-color: #0056b3; /* Darker blue on hover */
     }
 
     .announcement {
       background: yellow;
       color: red;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 1.1em;
       padding: 5px;
     }
 
     marquee {
-      font-size: 18px;
+      font-size: 1.1em;
     }
 
     /* Styles for Staff Photos */
@@ -275,94 +320,119 @@
       }
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
+    /* --- Media Queries for Responsiveness --- */
 
+    /* For screens smaller than 992px (typical laptop breakpoint) */
+    @media (max-width: 992px) {
       .logo {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 10px;
+        width: 12vw;
       }
 
-      .school-title h1 {
-        font-size: 1.8em;
-      }
-
-      .school-title p {
-        font-size: 1em;
-      }
-
-      .officer-section {
-        margin-top: 10px;
-      }
-
-      .officer-row {
-        gap: 10px;
-      }
-
-      .circular-logo {
-        width: 50px;
-        height: 50px;
-      }
-
-      .officer-info p {
-        font-size: 0.7em;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 5px;
-      }
-
-      nav a {
-        margin: 0;
-        padding: 8px 10px;
-      }
-
-      .gallery-slide img {
-        max-width: 90%; /* Adjust for smaller screens */
+      .circular-logo-container {
+        width: 14vw;
+        height: 14vw;
       }
     }
 
-    @media (max-width: 480px) {
+
+    /* For screens smaller than 768px (common tablet breakpoint) */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        /* Stack header elements vertically */
+        padding: 15px;
+        /* Adjust padding */
+      }
+
       .logo {
-        width: 50px;
-        height: 50px;
+        width: 15vw;
+        /* Adjust logo size for tablets/mobiles */
+        max-width: 100px;
+      }
+
+      .school-title {
+        min-width: unset; /* Remove min-width to allow more flexibility */
+        margin-top: 15px; /* Add more space from top logo */
       }
 
       .school-title h1 {
-        font-size: 1.5em;
+        font-size: clamp(1.5em, 5vw, 2.5em); /* Adjust heading size for better fit */
       }
 
       .school-title p {
+        font-size: clamp(0.8em, 2vw, 1.1em); /* Adjust paragraph size */
+      }
+
+      .right-header-group {
+        margin-top: 15px;
+        /* Add more space from school title */
+      }
+
+      .right-header-group .top-logos,
+      .right-header-group .officer-photos {
+        gap: 5px; /* Reduce gap on smaller screens */
+      }
+
+      .circular-logo-container {
+        width: 18vw;
+        /* Adjust circular photo size for smaller screens */
+        height: 18vw;
+        max-width: 100px; /* Limit max size */
+        max-height: 100px; /* Limit max size */
+      }
+
+      .circular-logo-container + p {
+        font-size: 0.8em;
+      }
+
+      nav a {
+        margin: 4px 8px;
+        /* Adjust nav link spacing */
+        font-size: 0.85em;
+        /* Smaller font for nav */
+        padding: 4px 8px;
+      }
+    }
+
+    /* For very small screens (mobile phones) */
+    @media (max-width: 480px) {
+      .logo {
+        width: 20vw;
+        /* Even smaller logos on tiny screens */
+        max-width: 80px;
+      }
+
+      .school-title h1 {
+        font-size: clamp(1.2em, 6vw, 2em); /* Further adjust heading size */
+      }
+
+      .school-title p {
+        font-size: clamp(0.7em, 3vw, 1em); /* Further adjust paragraph size */
+      }
+
+      .circular-logo-container {
+        width: 20vw;
+        /* Even smaller circular photos */
+        height: 20vw;
+        max-width: 80px; /* Limit max size */
+        max-height: 80px; /* Limit max size */
+      }
+
+      .circular-logo-container + p {
+        font-size: 0.7em;
+      }
+
+      nav a {
+        margin: 2px 5px;
+        /* Tighter spacing for nav */
+        font-size: 0.75em;
+        /* Even smaller font */
+        padding: 3px 6px;
+      }
+
+      .announcement,
+      marquee {
         font-size: 0.9em;
-      }
-
-      .circular-logo {
-        width: 40px;
-        height: 40px;
-      }
-
-      .officer-info p {
-        font-size: 0.6em;
-      }
-
-      .prev,
-      .next {
-        padding: 10px;
-        font-size: 18px;
-      }
-
-      section {
-        padding: 20px !important; /* Use !important to override inline styles */
-      }
-
-      .announcement marquee {
-        font-size: 14px;
       }
     }
   </style>
@@ -370,30 +440,36 @@
 
 <body>
 
-  <div style="position: absolute; top: 10px; left: 10px; font-weight: bold; font-size: 18px; background-color: rgba(249, 249, 249, 0.8); padding: 8px; border-radius: 5px; box-shadow: 0 0 5px #ccc; z-index: 100;">
+  <div style="position: absolute; top: 10px; left: 10px; font-weight: bold; font-size: 18px; background-color: #f9f9f9; padding: 8px; border-radius: 5px; box-shadow: 0 0 5px #ccc; z-index: 100;">
     <span id="date"></span> | <span id="clock"></span>
   </div>
 
   <div class="container">
     <header>
+      <div class="school-name-background"></div>
+
       <img src="logo1.png" alt="Left Logo" class="logo">
       <div class="school-title">
-        <h1>Primary School Rabupura-1,Jewar,Gautam Buddh Nagar, Uttar Pardesh</h1>
-        <p>Where Every Child Shines</p>
+        <h1>Primary School Rabupura-1,Jewar</h1>
+        <p>Gautam Buddh Nagar, Uttar Pradesh</p> <p style="font-size: clamp(0.8em, 1.5vw, 1.1em);">जहां हर बच्चा चमकता है।</p>
       </div>
-      <div class="officer-section">
-        <div class="officer-row">
-          <img src="logo2.png" alt="Original Logo 2" class="logo">
-          <img src="logo3.png" alt="Original Logo 3" class="logo">
+      <div class="right-header-group">
+        <div class="top-logos">
+          <img src="9202642886059603450.jpeg" alt="BSA Logo" class="logo">
+          <img src="2984672790716164213.jpeg" alt="BEO Logo" class="logo">
         </div>
-        <div class="officer-row">
-          <div class="officer-info">
-            <img src="bsa-officer.png" alt="BSA Officer" class="circular-logo">
-            <p>BSA<br>Rahul Kumar Panwar</p>
+        <div class="officer-photos">
+          <div style="text-align: center;">
+            <div class="circular-logo-container">
+              <img src="bsa-officer.png" alt="BSA Officer">
+            </div>
+            <p style="margin-top: 5px; font-weight: bold;">BSA<br>Rahul Kumar Panwar</p>
           </div>
-          <div class="officer-info">
-            <img src="beo-officer.png" alt="BEO Officer" class="circular-logo">
-            <p>BEO<br>Mohd. Rashid</p>
+          <div style="text-align: center;">
+            <div class="circular-logo-container">
+              <img src="beo-officer.png" alt="BEO Officer">
+            </div>
+            <p style="margin-top: 5px; font-weight: bold;">BEO<br>Mohd. Rashid</p>
           </div>
         </div>
       </div>
@@ -439,7 +515,7 @@
     <section id="about" style="padding: 40px; background-color: #eef7ff;">
       <h2 style="color: blue; text-align: center;">हमारे बारे में</h2>
       <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; text-align: justify; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-        हमारा प्राथमिक विद्यालय रबूपुरा 1, जेवर, बेसिक शिक्षा परिषद उत्तर प्रदेश के अंतर्गत है। प्राथमिक विद्यालय रबूपुरा 1 का निर्माण 1965 में किया गया। यह शिक्षा के क्षेत्र में उत्कृष्टता की मिसाल है। यहाँ पर छात्रों को गुणवत्तापूर्ण शिक्षा, नैतिक मूल्यों और समग्र विकास के लिए एक प्रेरणादायक वातावरण प्रदान किया जाता है।<br><br>
+        हमारा प्राथमिक विद्यालय रबूपुरा 1, जेवर, बेसिक शिक्षा परिषद उत्तर प्रदेश के अंतर्गत है। प्राथमिक विद्यालय रबूपura 1 का निर्माण 1965 में किया गया। यह शिक्षा के क्षेत्र में उत्कृष्टता की मिसाल है। यहाँ पर छात्रों को गुणवत्तापूर्ण शिक्षा, नैतिक मूल्यों और समग्र विकास के लिए एक प्रेरणादायक वातावरण प्रदान किया जाता है।<br><br>
 
         हमारा उद्देश्य केवल पुस्तकीय ज्ञान देना नहीं, बल्कि विद्यार्थियों को आत्मनिर्भर, जिम्मेदार और समाज के लिए उपयोगी नागरिक बनाना है। विद्यालय में अनुभवी और समर्पित शिक्षकों की टीम है जो हर छात्र को उसकी प्रतिभा के अनुसार मार्गदर्शन देती है।<br><br>
 
@@ -517,7 +593,7 @@
             <img src="hemlata-sharma.jpg" alt="Hemlata Sharma">
             <span><strong>Hemlata Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
           </li>
-          <li class="staff-member">
+          <li class="staff--member">
             <img src="danvir-sharma.jpg" alt="Danvir Sharma">
             <span><strong>Danvir Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
           </li>
@@ -531,7 +607,7 @@
 
     <section id="admission" style="padding: 40px; background-color: #fefbe9;">
       <h2 style="color: blue; text-align: center;">प्रवेश जानकारी</h2>
-      <div style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; font-size: 18px; color: black; box-shadow: 0 0 15px rgba(0,0,0,0.1); line-height: 1.8;">
+      <div style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; font-size: 18px; color: black; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); line-height: 1.8;">
         <p>📢 <strong>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: <span style="color:red;">30 सितम्बर 2025</span></strong></p>
 
         <p>➤ <strong>प्रवेश कैसे लें:</strong> विद्यालय में आकर संपर्क करें।</p>
@@ -563,7 +639,7 @@
 
     <section id="notice" style="padding: 40px; background-color: #e3f2fd;">
       <h2 style="color: blue; text-align: center;">सूचना पट्ट (Notice Board)</h2>
-      <div style="max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); font-size: 18px; color: black;">
+      <div style="max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); font-size: 18px; color: black;">
         <ul style="list-style-type: '📌 '; padding-left: 20px;">
           <li>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: 30 सितम्बर 2025</li>
           <li>ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।</li>
@@ -609,8 +685,7 @@
         <div class="gallery-slide fade">
           <a href="image6.jpg" download>
             <img src="image6.jpg" alt="गैलरी चित्र 6">
-          </a>
-          <p class="caption">वृक्षारोपण</p>
+            <p class="caption">वृक्षारोपण</p>
         </div>
         <div class="gallery-slide fade">
           <a href="image7.jpg" download>
@@ -667,86 +742,157 @@
 
       <div class="notice-marquee">
         <marquee>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि 30 सितम्बर 2025।</marquee>
-        <marquee behavior="scroll" direction="right" scrollamount="6">
-          सभी अभिभावकों को सूचित किया जाता है कि विद्यालय में स्वच्छ जल और शौचालय की सुविधा उपलब्ध है।
-        </marquee>
+        <marquee>ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक।</marquee>
+      </div>
+
+      <div class="notices-list">
+        <ul>
+          <li><a href="notice2.pdf" download>समाचार पत्रिका (डाउनलोड करें)</a></li>
+          <li><a href="notice3.pdf" download>विद्यालय शेड्यूल 2025 (डाउनलोड करें)</a></li>
+        </ul>
       </div>
     </section>
 
-    <section id="contact" style="padding: 40px; background-color: #f7e6ff;">
-      <h2 style="color: blue; text-align: center;">संपर्क करें</h2>
-      <div style="max-width: 700px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); font-size: 18px; color: black; text-align: center;">
-        <p><strong>प्राथमिक विद्यालय रबूपुरा-1, जेवर</strong></p>
-        <p>पता: रबूपुरा, जेवर, गौतम बुद्ध नगर, उत्तर प्रदेश - 203209</p>
-        <p>ईमेल: <a href="mailto:rabupuraa1@gmail.com">rabupuraa1@gmail.com</a></p>
-        <p style="margin-top: 20px;">आप नीचे दिए गए फॉर्म का उपयोग करके भी हमसे संपर्क कर सकते हैं:</p>
-        <form style="margin-top: 20px; display: flex; flex-direction: column; gap: 15px;">
-          <input type="text" placeholder="आपका नाम" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
-          <input type="email" placeholder="आपका ईमेल" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
-          <textarea placeholder="आपका संदेश" rows="5" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
-          <button type="submit" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 18px;">संदेश भेजें</button>
-        </form>
+    <section id="admission" class="admission-section">
+      <h2>प्र प्रवेश जानकारी</h2>
+
+      <p><strong>कैसे दाखिला लें?</strong><br> विद्यार्थी विद्यालय में आकर दाखिला ले सकते हैं।</p>
+
+      <p><strong>आवश्यक दस्तावेज:</strong><br>
+        - आवेदक का आधार कार्ड (वैकल्पिक)<br>
+        - आयु 6 वर्ष कक्षा 1 में दाखिले के लिए।<br>
+      </p>
+
+      <p><strong>विद्यालय समय:</strong><br>
+        - 1 अप्रैल से 30 सितम्बर तक: 8:00 AM से 2:00 PM<br>
+        - 01 अक्टूबर से 31 मार्च तक: 9:00 AM से 3:00 PM<br>
+      </p>
+
+      <p><strong>नोट:</strong><br>
+        - विद्यालय में कोई भी फीस नहीं ली जाती है। सरकार द्वारा DBT के माध्यम से ₹1200 प्रति वर्ष छात्र को दिया जाता है।
+      </p>
+
+      <div class="admission-contact">
+        <p><strong>हमसे संपर्क करें:</strong><br>
+          आप हमें ईमेल कर सकते हैं: <a href="mail to:rabupuraa1@gmail.com">rabupuraa1@gmail.com</a>
+        </p>
       </div>
     </section>
 
-    <footer style="background: #333; color: white; text-align: center; padding: 20px; font-size: 14px;">
-      <p>&copy; 2025 Primary School Rabupura-1, Jewar. All Rights Reserved.</p>
-      <p>Designed  by [Chhama Rani Singh]</p>
+    <section id="feedback" class="feedback-section">
+      <h2>संपर्क करें और प्रतिक्रिया दें</h2>
+
+      <p>आप हमें ईमेल कर सकते हैं: <a href="mailto:rabupuraa1@gmail.com">rabupuraa1@gmail.com</a></p>
+
+      <h3>फीडबैक फॉर्म</h3>
+      <form action="/submit-feedback" method="POST" class="feedback-form">
+        <div>
+          <label for="name">पूरा नाम</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">ईमेल पता</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="message">आपकी प्रतिक्रिया</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <div>
+          <button type="submit">प्रस्तुत करें</button>
+        </div>
+      </form>
+    </section>
+
+    <footer id="footer" class="footer-section">
+      <div class="footer-content">
+        <p>&copy; 2025 PS Rabupura 1 Jewar. All Rights Reserved.</p>
+        <p>
+          Designed by
+          <a href="https://github.com/Chhama06" target="_blank" style="color: yellow; font-weight: bold;">
+            Chhama Rani Singh
+          </a>
+        </p>
+
+        <div class="social-media">
+          <a href="https://facebook.com" target="_blank">Facebook</a> |
+          <a href="https://twitter.com" target="_blank">Twitter</a> |
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+      </div>
     </footer>
-
   </div>
-
   <script>
-    // Live Date and Clock
     function updateDateTime() {
       const now = new Date();
-      const optionsDate = {
+
+      // Format date in Hindi (dd Month, weekday)
+      const options = {
+        weekday: 'long',
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       };
-      const optionsTime = {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true
-      };
+      const date = now.toLocaleDateString('hi-IN', options);
 
-      document.getElementById('date').textContent = now.toLocaleDateString('hi-IN', optionsDate);
-      document.getElementById('clock').textContent = now.toLocaleTimeString('hi-IN', optionsTime);
+      // Format time in HH:MM:SS format
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const time = hours + ":" + minutes + ":" + seconds;
+
+      // Set values
+      document.getElementById('date').textContent = date;
+      document.getElementById('clock').textContent = time;
     }
 
-    updateDateTime();
     setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
 
-    // Image Gallery Slideshow
-    let slideIndex = 1;
-    showSlides(slideIndex);
+  <script>
+    let slideIndex = 0;
+    let autoSlideTimeout; // To store the timeout ID for auto-slide
 
-    function changeSlide(n) {
-      showSlides(slideIndex += n);
+    function showSlides() {
+      let slides = document.getElementsByClassName("gallery-slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      autoSlideTimeout = setTimeout(showSlides, 3000); // Change image every 3 seconds
     }
 
-    function showSlides(n) {
-      let i;
+    // Function for manual slide change
+    function changeSlide(n) {
+      clearTimeout(autoSlideTimeout); // Stop auto-slide on manual navigation
       let slides = document.getElementsByClassName("gallery-slide");
-      if (n > slides.length) {
-        slideIndex = 1
+      slideIndex += n; // Update index based on n (-1 for prev, 1 for next)
+
+      if (slideIndex > slides.length) {
+        slideIndex = 1; // Loop back to the first slide
       }
-      if (n < 1) {
-        slideIndex = slides.length
+      if (slideIndex < 1) {
+        slideIndex = slides.length; // Loop to the last slide
       }
-      for (i = 0; i < slides.length; i++) {
+
+      for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
       slides[slideIndex - 1].style.display = "block";
+
+      // Restart auto-slide after a short delay (optional, but good for user experience)
+      autoSlideTimeout = setTimeout(showSlides, 5000); // Resume auto-slide after 5 seconds
     }
 
-    // Automatic slideshow (optional)
-    // setInterval(() => {
-    //   changeSlide(1);
-    // }, 5000); // Change image every 5 seconds
+    // Initial call to display the first slide
+    showSlides();
   </script>
+
 </body>
 
 </html>
