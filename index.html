@@ -4,38 +4,19 @@
   <meta charset="UTF-8">
 
 </body>
-  <div id="clockDate" style="text-align: right; font-weight: bold; padding: 10px; font-size: 18px;"></div>
-  
-  <!-- Your website content starts here -->
-  <!-- Date and Clock Display -->
-<div style="position: absolute; top: 10px; left: 10px; font-weight: bold; line-height: 1.2;">
-  <div id="date"></div>
-  <div id="clock"></div>
-</div>
-
-<!-- Date and Clock Script -->
 <script>
-  function updateDateTime() {
+  function updateClockDate() {
     const now = new Date();
-
-    // Format date in Hindi
-    const date = now.toLocaleDateString('hi-IN', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
-
-    // Format time in Hindi
+    const optionsDate = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
     const time = now.toLocaleTimeString('hi-IN');
-
-    // Display date and time
-    document.getElementById('date').innerHTML = date;
-    document.getElementById('clock').innerHTML = time;
+    const date = now.toLocaleDateString('hi-IN', optionsDate);
+    document.getElementById('clockDate').innerHTML = `${date} | ${time}`;
   }
 
-  setInterval(updateDateTime, 1000);
-  updateDateTime(); // Show immediately on load
+  setInterval(updateClockDate, 1000);
+  updateClockDate();
 </script>
+</body>
 
 </html>
 
