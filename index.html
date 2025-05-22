@@ -11,7 +11,8 @@
             margin: 0;
             background: white;
             font-family: 'Arial', sans-serif;
-            color: #333; /* Default text color */
+            color: #333;
+            /* Default text color */
         }
 
         /* Main container to fix website width and center it */
@@ -34,45 +35,62 @@
             /* Allows header elements to wrap on smaller screens */
             position: relative;
             /* For z-index stacking */
-            overflow: hidden; /* Ensures background image inside elements doesn't spill */
+            overflow: hidden;
+            /* Ensures background image inside elements doesn't spill */
         }
 
         /* Group for logos on the left side of the header */
         .left-header-group {
             display: flex;
             align-items: center;
-            gap: 15px; /* Space between the logos */
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            z-index: 2; /* Ensure these logos are above the school title background */
+            gap: 15px;
+            /* Space between the logos */
+            flex-wrap: wrap;
+            /* Allow wrapping on smaller screens */
+            z-index: 2;
+            /* Ensure these logos are above the school title background */
         }
 
         .header-logo {
-            width: 80px; /* Default size for smaller logos */
+            width: 80px;
+            /* Default size for smaller logos */
             height: auto;
             object-fit: contain;
-            flex-shrink: 0; /* Prevent from shrinking too much */
+            flex-shrink: 0;
+            /* Prevent from shrinking too much */
         }
 
         /* Specific style for the main school logo (on the right) */
         .school-logo {
-            width: 180px; /* Larger size for the school logo */
+            width: 180px;
+            /* Larger size for the school logo */
             height: auto;
             object-fit: contain;
             flex-shrink: 0;
-            margin-left: auto; /* Pushes it to the far right */
-            z-index: 2; /* Ensure it's above other elements */
+            margin-left: auto;
+            /* Pushes it to the far right */
+            z-index: 2;
+            /* Ensure it's above other elements */
         }
 
         .school-title {
             text-align: center;
-            flex-grow: 1; /* Allows title to take up available space */
-            min-width: 250px; /* Minimum width to prevent excessive squishing */
-            margin: 0 15px; /* Margin to separate from logos */
-            padding: 15px 10px; /* Padding inside the title box */
-            position: relative; /* For background image positioning */
-            z-index: 1; /* Ensure text is above background but below logos */
-            border-radius: 8px; /* Slightly rounded corners for the title box */
-            overflow: hidden; /* Hide anything outside title box */
+            flex-grow: 1;
+            /* Allows title to take up available space */
+            min-width: 250px;
+            /* Minimum width to prevent excessive squishing */
+            margin: 0 15px;
+            /* Margin to separate from logos */
+            padding: 15px 10px;
+            /* Padding inside the title box */
+            position: relative;
+            /* For background image positioning */
+            z-index: 1;
+            /* Ensure text is above background but below logos */
+            border-radius: 8px;
+            /* Slightly rounded corners for the title box */
+            overflow: hidden;
+            /* Hide anything outside title box */
         }
 
         /* Background image specifically for the school name area */
@@ -119,17 +137,24 @@
         /* Container for the right-side officer photos and names */
         .officer-photos-group {
             display: flex;
-            align-items: flex-start; /* Align items to the top */
-            gap: 20px; /* Space between BSA and BEO sections */
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            justify-content: center; /* Center items when they wrap */
-            margin-left: 20px; /* Push this group slightly to the right */
-            z-index: 2; /* Ensure these are above the school title background */
+            align-items: flex-start;
+            /* Align items to the top */
+            gap: 20px;
+            /* Space between BSA and BEO sections */
+            flex-wrap: wrap;
+            /* Allow wrapping on smaller screens */
+            justify-content: center;
+            /* Center items when they wrap */
+            margin-left: 20px;
+            /* Push this group slightly to the right */
+            z-index: 2;
+            /* Ensure these are above the school title background */
         }
 
         .officer-details {
             text-align: center;
-            flex-shrink: 0; /* Prevent shrinking */
+            flex-shrink: 0;
+            /* Prevent shrinking */
         }
 
         .circular-photo-container {
@@ -143,7 +168,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 5px; /* Space between photo and name */
+            margin-bottom: 5px;
+            /* Space between photo and name */
         }
 
         .circular-photo-container img {
@@ -156,8 +182,10 @@
             margin: 0;
             font-weight: bold;
             font-size: 0.9em;
-            color: #000080; /* Dark blue for names */
-            text-shadow: 0 0 2px rgba(255, 255, 255, 0.7); /* Subtle shadow for visibility */
+            color: #000080;
+            /* Dark blue for names */
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+            /* Subtle shadow for visibility */
         }
 
 
@@ -222,15 +250,66 @@
             border: 2px solid #007BFF;
         }
 
-        .staff-member span {
+        /* CSS for staff name and designation colors */
+        .staff-name-1 {
+            color: #FF5733;
+        }
+        /* Orange-Red */
+        .staff-desig-1 {
+            color: #008080;
+        }
+        /* Teal */
+
+        .staff-name-2 {
+            color: #3366FF;
+        }
+        /* Blue */
+        .staff-desig-2 {
+            color: #CC0066;
+        }
+        /* Dark Pink */
+
+        .staff-name-3 {
+            color: #8A2BE2;
+        }
+        /* Blue-Violet */
+        .staff-desig-3 {
+            color: #FFD700;
+        }
+        /* Gold */
+
+        .staff-name-4 {
+            color: #228B22;
+        }
+        /* Forest Green */
+        .staff-desig-4 {
+            color: #DC143C;
+        }
+        /* Crimson */
+
+        .staff-name-5 {
+            color: #FF8C00;
+        }
+        /* Dark Orange */
+        .staff-desig-5 {
+            color: #4682B4;
+        }
+        /* Steel Blue */
+
+        .staff-name-6 {
+            color: #9932CC;
+        }
+        /* Dark Orchid */
+        .staff-desig-6 {
+            color: #3CB371;
+        }
+        /* Medium Sea Green */
+
+        /* General styling for staff names/designations if needed */
+        .staff-member span.name {
             font-weight: bold;
-            color: #333;
         }
 
-        .staff-member p {
-            margin: 0;
-            color: #555;
-        }
 
         /* Gallery styles - adjusted for medium size and navigation */
         .gallery-section {
@@ -331,7 +410,8 @@
         /* For screens smaller than 1024px (laptops/large tablets) */
         @media (max-width: 1024px) {
             .school-logo {
-                width: 150px; /* Slightly smaller on medium screens */
+                width: 150px;
+                /* Slightly smaller on medium screens */
             }
 
             .header-logo {
@@ -353,38 +433,54 @@
             header {
                 flex-direction: column;
                 /* Stack header elements vertically */
-                align-items: center; /* Center items when stacked */
+                align-items: center;
+                /* Center items when stacked */
                 padding: 10px;
             }
 
             .left-header-group {
-                width: 100%; /* Take full width */
-                justify-content: center; /* Center logos */
-                margin-bottom: 15px; /* Space before school title */
+                width: 100%;
+                /* Take full width */
+                justify-content: center;
+                /* Center logos */
+                margin-bottom: 15px;
+                /* Space before school title */
             }
 
             .header-logo {
-                width: 60px; /* Adjust logo size */
+                width: 60px;
+                /* Adjust logo size */
             }
 
             .school-title {
-                width: 100%; /* Take full width */
-                margin: 10px 0; /* Adjust margin */
-                min-width: unset; /* Remove min-width to allow full flexibility */
+                width: 100%;
+                /* Take full width */
+                margin: 10px 0;
+                /* Adjust margin */
+                min-width: unset;
+                /* Remove min-width to allow full flexibility */
             }
 
             .school-logo {
-                order: -1; /* Pushes school logo to the top when stacked (flex-direction column) */
-                width: 120px; /* Smaller school logo on smaller screens */
-                margin-left: 0; /* Remove auto-margin */
-                margin-bottom: 15px; /* Add space below it */
+                order: -1;
+                /* Pushes school logo to the top when stacked (flex-direction column) */
+                width: 120px;
+                /* Smaller school logo on smaller screens */
+                margin-left: 0;
+                /* Remove auto-margin */
+                margin-bottom: 15px;
+                /* Add space below it */
             }
 
             .officer-photos-group {
-                width: 100%; /* Take full width */
-                justify-content: center; /* Center officer photos */
-                margin-left: 0; /* Remove left margin */
-                margin-top: 15px; /* Space after school title */
+                width: 100%;
+                /* Take full width */
+                justify-content: center;
+                /* Center officer photos */
+                margin-left: 0;
+                /* Remove left margin */
+                margin-top: 15px;
+                /* Space after school title */
             }
 
             .circular-photo-container {
@@ -474,7 +570,7 @@
         </header>
 
         <div class="announcement">
-            <marquee behavior="scroll" direction="left">🌞 ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा। 📢 प्रवेश 2025-26 हेतु 30 सितम्बर अंतिम तिथि है।</marquee>
+            <marquee behavior="scroll" direction="left"> ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।  प्रवेश 2025-26 हेतु 30 सितम्बर अंतिम तिथि है।</marquee>
         </div>
 
         <nav>
@@ -502,9 +598,9 @@
             <h2 style="color: blue; text-align: center;">सूचना पट्ट</h2>
             <div style="max-width: 700px; margin: auto; background: white; border: 2px solid #007BFF; padding: 20px; border-radius: 10px;">
                 <ul style="color: black; font-size: 16px; text-align: left;">
-                    <li>📢 <strong>प्रवेश सूचना:</strong> शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि 30 सितम्बर 2025।</li>
-                    <li>🌞 <strong>अवकाश:</strong> ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।</li>
-                    <li>📄 <strong>डाउनलोड:</strong> <a href="timetable.pdf" target="_blank">समय सारणी PDF</a> उपलब्ध है।</li>
+                    <li> <strong>प्रवेश सूचना:</strong> शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि 30 सितम्बर 2025।</li>
+                    <li> <strong>अवकाश:</strong> ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।</li>
+                    <li> <strong>डाउनलोड:</strong> <a href="timetable.pdf" target="_blank">समय सारणी PDF</a> उपलब्ध है।</li>
                 </ul>
             </div>
         </section>
@@ -544,14 +640,14 @@
             <h2 style="color: blue; text-align: center;">सुविधाएँ</h2>
             <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
                 <ul style="list-style: none; padding-left: 0;">
-                    <li>🍛 पोषित आहार, फल, दूध (MDM)</li>
-                    <li>🖥️ स्मार्ट कक्षाएं (75 इंच टच स्क्रीन LED और 55 इंच स्मार्ट LED)</li>
-                    <li>🎨 रंगीन एवं आकर्षक कक्षाएँ</li>
-                    <li>🪑 आरामदायक बेंच</li>
-                    <li>🎠 विभिन्न प्रकार के झूले</li>
-                    <li>🏀 खेल कूद सामग्री</li>
-                    <li>🚰 पीने योग्य पानी</li>
-                    <li>🚻 साफ़ एवं सुरक्षित शौचालय</li>
+                    <li> पोषित आहार, फल, दूध (MDM)</li>
+                    <li>️ स्मार्ट कक्षाएं (75 इंच टच स्क्रीन LED और 55 इंच स्मार्ट LED)</li>
+                    <li> रंगीन एवं आकर्षक कक्षाएँ</li>
+                    <li> आरामदायक बेंच</li>
+                    <li> विभिन्न प्रकार के झूले</li>
+                    <li> खेल कूद सामग्री</li>
+                    <li> पीने योग्य पानी</li>
+                    <li> साफ़ एवं सुरक्षित शौचालय</li>
                 </ul>
             </div>
         </section>
@@ -561,9 +657,9 @@
             <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: justify;">
                 प्राथमिक विद्यालय रबूपुरा 1 में प्राथमिक चिकित्सा किट (First Aid Kit) उपलब्ध रहती है। सरकार द्वारा चलाए जा रहे अभियानों के तहत समय-समय पर छात्रों को निम्नलिखित स्वास्थ्य सेवाएं प्रदान की जाती हैं:
                 <ul style="margin-top: 15px; margin-left: 20px;">
-                    <li>💉 आवश्यक टीकाकरण</li>
-                    <li>💊 आयरन की गोलियां</li>
-                    <li>🪱 पेट के कीड़ों की दवा (एलबेंडाजोल)</li>
+                    <li> आवश्यक टीकाकरण</li>
+                    <li> आयरन की गोलियां</li>
+                    <li> पेट के कीड़ों की दवा (एलबेंडाजोल)</li>
                 </ul>
                 यह सभी सेवाएं पूर्णतः निःशुल्क प्रदान की जाती हैं और बच्चों के स्वास्थ्य की नियमित निगरानी की जाती है।
             </div>
@@ -576,27 +672,27 @@
                 <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
                     <li class="staff-member">
                         <img src="manisha-singh.jpg" alt="Manisha Singh">
-                        <span><strong>Manisha Singh</strong> – प्रधानाध्यापक (Incharge Headmaster)</span>
+                        <span class="staff-name-1">Manisha Singh</span> – <span class="staff-desig-1">प्रधानाध्यापक (Incharge Headmaster)</span>
                     </li>
                     <li class="staff-member">
                         <img src="manisha-rajput.jpg" alt="Manisha Rajput">
-                        <span><strong>Manisha Rajput</strong> – सहायक अध्यापक (Assistant Teacher)</span>
+                        <span class="staff-name-2">Manisha Rajput</span> – <span class="staff-desig-2">सहायक अध्यापक (Assistant Teacher)</span>
                     </li>
                     <li class="staff-member">
                         <img src="chhama-rani-singh.jpg" alt="Chhama Rani Singh">
-                        <span><strong>Chhama Rani Singh</strong> – सहायक अध्यापक (Assistant Teacher)</span>
+                        <span class="staff-name-3">Chhama Rani Singh</span> – <span class="staff-desig-3">सहायक अध्यापक (Assistant Teacher)</span>
                     </li>
                     <li class="staff-member">
                         <img src="hemlata-sharma.jpg" alt="Hemlata Sharma">
-                        <span><strong>Hemlata Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
+                        <span class="staff-name-4">Hemlata Sharma</span> – <span class="staff-desig-4">शिक्षा मित्र (Shiksha Mitra)</span>
                     </li>
                     <li class="staff-member">
                         <img src="danvir-sharma.jpg" alt="Danvir Sharma">
-                        <span><strong>Danvir Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
+                        <span class="staff-name-5">Danvir Sharma</span> – <span class="staff-desig-5">शिक्षा मित्र (Shiksha Mitra)</span>
                     </li>
                     <li class="staff-member">
                         <img src="bhavna-sharma.jpg" alt="Bhavna Sharma">
-                        <span><strong>Bhavna Sharma</strong> – शिक्षा मित्र (Shiksha Mitra)</span>
+                        <span class="staff-name-6">Bhavna Sharma</span> – <span class="staff-desig-6">शिक्षा मित्र (Shiksha Mitra)</span>
                     </li>
                 </ul>
             </div>
@@ -605,7 +701,7 @@
         <section id="admission" style="padding: 40px; background-color: #fefbe9;">
             <h2 style="color: blue; text-align: center;">प्रवेश जानकारी</h2>
             <div style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; font-size: 18px; color: black; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); line-height: 1.8;">
-                <p>📢 <strong>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: <span style="color:red;">30 सितम्बर 2025</span></strong></p>
+                <p> <strong>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: <span style="color:red;">30 सितम्बर 2025</span></strong></p>
 
                 <p>➤ <strong>प्रवेश कैसे लें:</strong> विद्यालय में आकर संपर्क करें।</p>
 
@@ -619,15 +715,15 @@
 
                 <p>➤ <strong>विद्यालय समय:</strong></p>
                 <ul style="margin-left: 20px;">
-                    <li>🕗 1 अप्रैल से 30 सितम्बर – सुबह 8:00 बजे से दोपहर 2:00 बजे तक</li>
-                    <li>🕘 1 अक्टूबर से 31 मार्च – सुबह 9:00 बजे से दोपहर 3:00 बजे तक</li>
+                    <li> 1 अप्रैल से 30 सितम्बर – सुबह 8:00 बजे से दोपहर 2:00 बजे तक</li>
+                    <li> 1 अक्टूबर से 31 मार्च – सुबह 9:00 बजे से दोपहर 3:00 बजे तक</li>
                 </ul>
             </div>
         </section>
 
         <section style="padding: 20px; background-color: #fff0f0;">
             <div style="background: red; color: white; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; font-size: 20px;">
-                📢
+                
                 <marquee behavior="scroll" direction="left" scrollamount="6">
                     ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा। सभी को सूचित किया जाता है।
                 </marquee>
@@ -637,7 +733,7 @@
         <section id="notice" style="padding: 40px; background-color: #e3f2fd;">
             <h2 style="color: blue; text-align: center;">सूचना पट्ट (Notice Board)</h2>
             <div style="max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); font-size: 18px; color: black;">
-                <ul style="list-style-type: '📌 '; padding-left: 20px;">
+                <ul style="list-style-type: ' '; padding-left: 20px;">
                     <li>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: 30 सितम्बर 2025</li>
                     <li>ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।</li>
                     <li>विद्यालय समय गर्मियों में: सुबह 8:00 बजे से 2:00 बजे तक।</li>
@@ -650,143 +746,144 @@
             <h2>गैलरी</h2>
             <div class="gallery-container">
                 <div class="gallery-slide fade">
-                    <a href="image1.jpg" download>
-                        <img src="image1.jpg" alt="माता उन्मुखीकरण व खेल दिवस">
+                    <a href="gallery/image1.jpg" download>
+                        <img src="gallery/image1.jpg" alt="माता उन्मुखीकरण व खेल दिवस">
                     </a>
                     <p class="caption">माता उन्मुखीकरण व बाल दिवस का आयोजन</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image2.jpg" download>
-                        <img src="image2.jpg" alt="छात्रों का स्वागत ग्रीष्मावकाश के बाद">
+                    <a href="gallery/image2.jpg" download>
+                        <img src="gallery/image2.jpg" alt="छात्रों का स्वागत ग्रीष्मावकाश के बाद">
                     </a>
                     <p class="caption">ग्रीष्मावकाश के बाद छात्रों का स्वागत</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image3.jpg" download>
-                        <img src="image3.jpg" alt="जेवर विधायक ठाकुर धीरेंद्र सिंह जी द्वारा विद्यालय का भ्रमण">
+                    <a href="gallery/image3.jpg" download>
+                        <img src="gallery/image3.jpg" alt="जेवर विधायक ठाकुर धीरेंद्र सिंह जी द्वारा विद्यालय का भ्रमण">
                     </a>
                     <p class="caption">जेवर विधायक ठाकुर धीरेंद्र सिंह जी द्वारा विद्यालय का भ्रमण।</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image4.jpg" download>
-                        <img src="image4.jpg" alt="गैलरी चित्र 4">
+                    <a href="gallery/image4.jpg" download>
+                        <img src="gallery/image4.jpg" alt="गैलरी चित्र 4">
                     </a>
                     <p class="caption">विद्यालय द्वारा स्कूल चलो अभियान रैली का आयोजन </p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image5.jpg" download>
-                        <img src="image5.jpg" alt="गैलरी चित्र 5">
+                    <a href="gallery/image5.jpg" download>
+                        <img src="gallery/image5.jpg" alt="गैलरी चित्र 5">
                     </a>
                     <p class="caption">15 अगस्त </p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image6.jpg" download>
-                        <img src="image6.jpg" alt="गैलरी चित्र 6">
-                        <p class="caption">वृक्षारोपण</p>
+                    <a href="gallery/image6.jpg" download>
+                        <img src="gallery/image6.jpg" alt="गैलरी चित्र 6">
+                    </a>
+                    <p class="caption">वृक्षारोपण</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image7.jpg" download>
-                        <img src="image7.jpg" alt="गैलरी चित्र 7">
+                    <a href="gallery/image7.jpg" download>
+                        <img src="gallery/image7.jpg" alt="गैलरी चित्र 7">
                     </a>
                     <p class="caption">टीकाकरण</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image8.jpg" download>
-                        <img src="image8.jpg" alt="गैलरी चित्र 8">
+                    <a href="gallery/image8.jpg" download>
+                        <img src="gallery/image8.jpg" alt="गैलरी चित्र 8">
                     </a>
                     <p class="caption">15 अगस्त</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image9.jpg" download>
-                        <img src="image9.jpg" alt="गैलरी चित्र 9">
+                    <a href="gallery/image9.jpg" download>
+                        <img src="gallery/image9.jpg" alt="गैलरी चित्र 9">
                     </a>
                     <p class="caption">26 जनवरी </p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image10.jpg" download>
-                        <img src="image10.jpg" alt="गैलरी चित्र 10">
+                    <a href="gallery/image10.jpg" download>
+                        <img src="gallery/image10.jpg" alt="गैलरी चित्र 10">
                     </a>
                     <p class="caption">छात्रों को बाल मूवी दिखाते हुए</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image11.jpg" download>
-                        <img src="image11.jpg" alt="गैलरी चित्र 11">
+                    <a href="gallery/image11.jpg" download>
+                        <img src="gallery/image11.jpg" alt="गैलरी चित्र 11">
                     </a>
                     <p class="caption">रंगोली बनाते हुए</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image12.jpg" download>
-                        <img src="image12.jpg" alt="गैलरी चित्र 12">
+                    <a href="gallery/image12.jpg" download>
+                        <img src="gallery/image12.jpg" alt="गैलरी चित्र 12">
                     </a>
                     <p class="caption">शिक्षक-छात्र </p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image13.jpg" download>
-                        <img src="image13.jpg" alt="गैलरी चित्र 13">
+                    <a href="gallery/image13.jpg" download>
+                        <img src="gallery/image13.jpg" alt="गैलरी चित्र 13">
                     </a>
                     <p class="caption">नारी सुरक्षा हेतु </p>
                 </div>
                 <div class="gallery-slide fade">
-    <a href="image14.jpg" download>
-        <img src="image14.jpg" alt="गैलरी चित्र 14">
-    </a>
-    <p class="caption"> classroom corner </p>
-</div>
-<div class="gallery-slide fade">
-    <a href="image15.jpg" download>
-                        <img src="image15.jpg" alt="गैलरी चित्र 15">
+                    <a href="gallery/image14.jpg" download>
+                        <img src="gallery/image14.jpg" alt="गैलरी चित्र 14">
+                    </a>
+                    <p class="caption"> classroom corner </p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="gallery/image15.jpg" download>
+                        <img src="gallery/image15.jpg" alt="गैलरी चित्र 15">
                     </a>
                     <p class="caption">संकुल मीटिंग</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image16.jpg" download>
-                        <img src="image16.jpg" alt="गैलरी चित्र 16">
+                    <a href="gallery/image16.jpg" download>
+                        <img src="gallery/image16.jpg" alt="गैलरी चित्र 16">
                     </a>
                     <p class="caption">रोनीजा न्यायपंचायत संकुल बैठक</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image17.jpg" download>
-                        <img src="image17.jpg" alt="गैलरी चित्र 17">
+                    <a href="gallery/image17.jpg" download>
+                        <img src="gallery/image17.jpg" alt="गैलरी चित्र 17">
                     </a>
-                    <p class="caption"झूले का आनंद</p>
+                    <p class="caption">झूले का आनंद</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image18.jpg" download>
-                        <img src="image18.jpg" alt="गैलरी चित्र 18">
+                    <a href="gallery/image18.jpg" download>
+                        <img src="gallery/image18.jpg" alt="गैलरी चित्र 18">
                     </a>
                     <p class="caption">विद्यालय भवन 1</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image19.jpg" download>
-                        <img src="image19.jpg" alt="गैलरी चित्र 19">
+                    <a href="gallery/image19.jpg" download>
+                        <img src="gallery/image19.jpg" alt="गैलरी चित्र 19">
                     </a>
                     <p class="caption">विद्यालय भवन 2</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image20.jpg" download>
-                        <img src="image20.jpg" alt="गैलरी चित्र 20">
+                    <a href="gallery/image20.jpg" download>
+                        <img src="gallery/image20.jpg" alt="गैलरी चित्र 20">
                     </a>
                     <p class="caption">विद्यालय भवन 3</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image21.jpg" download>
-                        <img src="image21.jpg" alt="गैलरी चित्र 21">
+                    <a href="gallery/image21.jpg" download>
+                        <img src="gallery/image21.jpg" alt="गैलरी चित्र 21">
                     </a>
                     <p class="caption">डॉक्टर का भ्रमण</p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image22.jpg" download>
-                        <img src="image22.jpg" alt="गैलरी चित्र 22">
+                    <a href="gallery/image22.jpg" download>
+                        <img src="gallery/image22.jpg" alt="गैलरी चित्र 22">
                     </a>
                     <p class="caption">झूले पर झुलते ननिहाल </p>
                 </div>
                 <div class="gallery-slide fade">
-                    <a href="image23.jpg" download>
-                        <img src="image23.jpg" alt="गैलरी चित्र 23">
+                    <a href="gallery/image23.jpg" download>
+                        <img src="gallery/image23.jpg" alt="गैलरी चित्र 23">
                     </a>
                     <p class="caption">आनंद के पल</p>
-    </div>
-                
+                </div>
+
                 <div class="gallery-nav">
                     <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
                     <span class="next" onclick="changeSlide(1)">&#10095;</span>
@@ -865,7 +962,7 @@
                 <p>&copy; 2025 PS Rabupura 1 Jewar. All Rights Reserved.</p>
                 <p>
                     Designed by
-                    <a  target="_blank" style="color: yellow; font-weight: bold;">
+                    <a target="_blank" style="color: yellow; font-weight: bold;">
                         Chhama Rani Singh
                     </a>
                 </p>
@@ -914,7 +1011,7 @@
             let slides = document.getElementsByClassName("gallery-slide");
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
-            }
+                      }
             slideIndex++;
             if (slideIndex > slides.length) {
                 slideIndex = 1;
@@ -951,5 +1048,4 @@
 
 </body>
 
-  </html>
-  
+</html>
