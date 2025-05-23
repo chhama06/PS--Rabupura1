@@ -33,151 +33,140 @@
             left: 10px;
             font-weight: bold;
             font-size: 18px;
-            background-color: #f9f9f9;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
             padding: 8px;
             border-radius: 5px;
             box-shadow: 0 0 5px #ccc;
-            z-index: 100;
-            /* Ensure it's on top */
+            z-index: 200; /* Higher z-index to be on top of everything */
+            color: #333; /* Darker text color */
         }
 
         header {
             display: flex;
-            align-items: center;
-            /* Vertically aligns items */
+            align-items: flex-end; /* Align items to the bottom */
             justify-content: space-between;
-            /* Pushes items to the ends */
-            padding: 15px 20px;
+            padding: 10px 20px 0 20px; /* Reduced top/bottom padding */
             background: #f1f1f1;
             flex-wrap: wrap;
-            /* Allows header elements to wrap on smaller screens */
             position: relative;
-            /* For z-index stacking */
             overflow: hidden;
-            /* Ensures background image inside elements doesn't spill */
+            min-height: 180px; /* Ensure enough height for the background and content */
         }
 
-        /* Group for logos on the left side of the header */
-        .left-header-group {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            /* Space between the logos */
-            flex-wrap: wrap;
-            /* Allow wrapping on smaller screens */
-            z-index: 2;
-            /* Ensure these logos are above the school title background */
-        }
-
-        .header-logo {
-            width: 80px;
-            /* Default size for smaller logos */
-            height: auto;
-            object-fit: contain;
-            flex-shrink: 0;
-            /* Prevent from shrinking too much */
-        }
-
-        /* Specific style for the main school logo (on the right) */
-        .school-logo {
-            width: 250px;
-            /* Significantly Larger size for the school logo */
-            height: auto;
-            object-fit: contain;
-            flex-shrink: 0;
-            margin-left: auto;
-            /* Pushes it to the far right */
-            z-index: 2;
-            /* Ensure it's above other elements */
-        }
-
-        .school-title {
-            text-align: center;
-            flex-grow: 1;
-            /* Allows title to take up available space */
-            min-width: 250px;
-            /* Minimum width to prevent excessive squishing */
-            margin: 0 15px;
-            /* Margin to separate from logos */
-            padding: 15px 10px;
-            /* Padding inside the title box */
-            position: relative;
-            /* For background image positioning */
-            z-index: 1;
-            /* Ensure text is above background but below logos */
-            border-radius: 8px;
-            /* Slightly rounded corners for the title box */
-            overflow: hidden;
-            /* Hide anything outside title box */
-        }
-
-        /* Background image specifically for the school name area */
-        .school-title::before {
-                  content: "";
+        /* Background image for the entire header */
+        header::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('school-bg.jpg');
-            /* IMPORTANT: Replace with your actual background image path */
+            background-image: url('school-bg.jpg'); /* IMPORTANT: Replace with your actual background image path */
             background-size: cover;
             background-position: center;
-            opacity: 0.3;
-            /* Adjust opacity for visibility */
-            z-index: -1;
-            /* Place behind the text content of school-title */
+            opacity: 0.4; /* Adjust opacity for visibility */
+            z-index: 0; /* Place behind all header content */
         }
 
+        /* Group for logos on the left side of the header */
+        .left-header-group {
+            display: flex;
+            align-items: flex-end; /* Align to the bottom of the group */
+            gap: 15px;
+            flex-wrap: wrap;
+            z-index: 1; /* Ensure above background */
+            position: relative; /* Needed for positioning inside header */
+            padding-bottom: 10px; /* Small padding at the bottom for spacing */
+        }
+
+        .header-logo {
+            width: 80px;
+            height: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .school-title {
+            text-align: center;
+            flex-grow: 1;
+            min-width: 250px;
+            margin: 0 15px; /* Adjust margin */
+            padding: 10px 10px; /* Reduced padding */
+            position: relative;
+            z-index: 1; /* Ensure text is above background */
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex; /* Use flexbox for internal alignment */
+            flex-direction: column;
+            justify-content: center; /* Vertically center content */
+            align-items: center; /* Horizontally center content */
+            padding-bottom: 0; /* Adjust if needed to reduce vertical space */
+        }
+
+        /* Remove school-title::before as the main header::before will handle the background */
+        .school-title::before {
+            display: none;
+        }
 
         .school-title h1 {
             color: #000080;
-            /* Dark blue for visibility */
             font-family: 'Georgia', serif;
             margin: 0;
-            font-size: clamp(1.8em, 3vw, 2.8em);
-            /* Responsive font size */
+            font-size: clamp(2.5em, 4vw, 3.5em); /* Larger font size */
             text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), -1px -1px 3px rgba(255, 255, 255, 0.8);
-            /* White shadow for contrast */
         }
 
         .school-title p {
             font-style: italic;
-            color: #000080;
-            /* Dark blue for visibility */
-            font-family: 'Comic Sans MS', cursive;
-            font-size: clamp(0.9em, 1.2vw, 1.2em);
-            /* Responsive font size */
+            margin: 5px 0 0 0; /* Reduced top margin */
+        }
+
+        .school-title p:nth-of-type(1) { /* Gautam Buddh Nagar, Uttar Pradesh */
+            color: #8B0000; /* Dark Red */
+            font-family: 'Verdana', sans-serif; /* Different font */
+            font-size: clamp(1.2em, 2vw, 1.8em); /* Bigger font size */
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
-            /* White shadow for contrast */
+        }
+
+        .school-title p:nth-of-type(2) { /* Tagline */
+            color: #006400; /* Dark Green */
+            font-family: 'Comic Sans MS', cursive;
+            font-size: clamp(1.1em, 1.5vw, 1.5em); /* Bigger font size */
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+
+        /* Specific style for the main school logo (in the middle) */
+        .school-logo {
+            width: 250px;
+            height: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+            /* No margin-left: auto; to keep it central */
+            z-index: 1;
         }
 
         /* Container for the right-side officer photos and names */
         .officer-photos-group {
             display: flex;
-            align-items: flex-start;
-            /* Align items to the top */
+            align-items: flex-end; /* Align items to the bottom */
             gap: 20px;
-            /* Space between BSA and BEO sections */
             flex-wrap: wrap;
-            /* Allow wrapping on smaller screens */
             justify-content: center;
-            /* Center items when they wrap */
-            margin-left: 20px;
-            /* Push this group slightly to the right */
-            z-index: 2;
-            /* Ensure these are above the school title background */
+            margin-left: 0; /* Remove left margin */
+            z-index: 1;
+            position: relative; /* Needed for positioning inside header */
+            padding-bottom: 10px; /* Small padding at the bottom for spacing */
         }
 
         .officer-details {
             text-align: center;
             flex-shrink: 0;
-            /* Prevent shrinking */
+            margin-bottom: 0; /* Reduced bottom margin */
         }
 
         .circular-photo-container {
             width: 100px;
-            /* Fixed size for circular photos */
             height: 100px;
             border-radius: 50%;
             overflow: hidden;
@@ -187,7 +176,6 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 5px;
-            /* Space between photo and name */
         }
 
         .circular-photo-container img {
@@ -201,9 +189,7 @@
             font-weight: bold;
             font-size: 0.9em;
             color: #000080;
-            /* Dark blue for names */
             text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
-            /* Subtle shadow for visibility */
         }
 
 
@@ -213,31 +199,23 @@
             text-align: center;
             display: flex;
             flex-wrap: wrap;
-            /* Allow nav items to wrap */
             justify-content: center;
-            /* Center nav items */
             gap: 10px;
-            /* Space between nav items */
         }
 
         nav a {
             color: white;
             padding: 8px 15px;
-            /* Add padding for better touch area */
             text-decoration: none;
             font-weight: bold;
             white-space: nowrap;
-            /* Prevent breaking text in nav links */
             transition: background-color 0.3s ease;
-            /* Smooth hover effect */
             border-radius: 5px;
-            /* Slightly rounded corners */
         }
 
         nav a:hover {
             text-decoration: none;
             background-color: #0056b3;
-            /* Darker blue on hover */
         }
 
         .announcement {
@@ -270,36 +248,27 @@
 
         /* CSS for staff name and designation colors - Grouped by designation */
         .staff-name-hm {
-            /* Headmaster */
             color: #D35400;
-            /* Pumpkin Orange */
         }
 
         .staff-desig-hm {
             color: #16A085;
-            /* Green Sea */
         }
 
         .staff-name-at {
-            /* Assistant Teacher */
             color: #2980B9;
-            /* Belize Hole */
         }
 
         .staff-desig-at {
             color: #8E44AD;
-            /* Wisteria */
         }
 
         .staff-name-sm {
-            /* Shiksha Mitra */
             color: #C0392B;
-            /* Pomegranate */
         }
 
         .staff-desig-sm {
             color: #27AE60;
-            /* Nephritis */
         }
 
 
@@ -310,30 +279,28 @@
             align-items: center;
             margin-bottom: 10px;
             font-size: 1.1em;
-            /* Adjust font size for better readability with icons */
         }
 
         /* Individual icon colors for Facilities section */
-        .facility-item .fa-apple-alt { color: #E74C3C; /* Alizarin */ }
-        .facility-item .fa-tv { color: #3498DB; /* Peter River */ }
-        .facility-item .fa-palette { color: #F1C40F; /* Sunflower */ }
-        .facility-item .fa-chair { color: #2ECC71; /* Emerald */ }
-        .facility-item .fa-swings { color: #9B59B6; /* Amethyst */ }
-        .facility-item .fa-baseball-ball { color: #E67E22; /* Carrot */ }
-        .facility-item .fa-tint { color: #34495E; /* Wet Asphalt */ }
-        .facility-item .fa-toilet { color: #7F8C8D; /* Asbestos */ }
+        .facility-item .fa-apple-alt { color: #E74C3C; }
+        .facility-item .fa-tv { color: #3498DB; }
+        .facility-item .fa-palette { color: #F1C40F; }
+        .facility-item .fa-chair { color: #2ECC71; }
+        .facility-item .fa-swings { color: #9B59B6; }
+        .facility-item .fa-baseball-ball { color: #E67E22; }
+        .facility-item .fa-tint { color: #34495E; }
+        .facility-item .fa-toilet { color: #7F8C8D; }
 
         /* Individual icon colors for Medical section */
-        .medical-item .fa-syringe { color: #1ABC9C; /* Turquoise */ }
-        .medical-item .fa-pills { color: #C0392B; /* Pomegranate */ }
-        .medical-item .fa-worm { color: #2C3E50; /* Midnight Blue */ }
+        .medical-item .fa-syringe { color: #1ABC9C; }
+        .medical-item .fa-pills { color: #C0392B; }
+        .medical-item .fa-worm { color: #2C3E50; }
 
 
         .facility-item i,
         .medical-item i {
             margin-right: 10px;
             font-size: 1.3em;
-            /* Slightly larger icon size */
         }
 
         /* Gallery styles - adjusted for medium size and navigation */
@@ -444,7 +411,6 @@
         @media (max-width: 1024px) {
             .school-logo {
                 width: 200px;
-                /* Slightly smaller on medium screens */
             }
 
             .header-logo {
@@ -464,61 +430,58 @@
                 font-size: 16px;
                 padding: 6px;
             }
+
+            .school-title h1 {
+                font-size: clamp(2em, 3.5vw, 3em);
+            }
+
+            .school-title p:nth-of-type(1) {
+                font-size: clamp(1em, 1.8vw, 1.5em);
+            }
+
+            .school-title p:nth-of-type(2) {
+                font-size: clamp(1em, 1.3vw, 1.3em);
+            }
         }
 
         /* For screens smaller than 768px (common tablet breakpoint) */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                /* Stack header elements vertically */
                 align-items: center;
-                /* Center items when stacked */
                 padding: 10px;
+                min-height: unset; /* Remove min-height for mobile */
             }
 
             .left-header-group {
                 width: 100%;
-                /* Take full width */
                 justify-content: center;
-                /* Center logos */
-                margin-bottom: 15px;
-                /* Space before school title */
+                margin-bottom: 10px; /* Reduced margin */
+                padding-bottom: 0; /* Remove padding */
             }
 
             .header-logo {
                 width: 60px;
-                /* Adjust logo size */
             }
 
             .school-title {
                 width: 100%;
-                /* Take full width */
                 margin: 10px 0;
-                /* Adjust margin */
                 min-width: unset;
-                /* Remove min-width to allow full flexibility */
+                padding: 5px 0; /* Reduced padding */
             }
 
             .school-logo {
-                order: -1;
-                /* Pushes school logo to the top when stacked (flex-direction column) */
+                order: unset; /* Revert order */
                 width: 150px;
-                /* Smaller school logo on smaller screens */
-                margin-left: 0;
-                /* Remove auto-margin */
-                margin-bottom: 15px;
-                /* Add space below it */
+                margin: 10px 0; /* Add margin for spacing */
             }
 
             .officer-photos-group {
                 width: 100%;
-                /* Take full width */
                 justify-content: center;
-                /* Center officer photos */
-                margin-left: 0;
-                /* Remove left margin */
-                margin-top: 15px;
-                /* Space after school title */
+                margin-top: 10px; /* Reduced margin */
+                padding-bottom: 0; /* Remove padding */
             }
 
             .circular-photo-container {
@@ -537,13 +500,22 @@
 
             .datetime-display {
                 position: static;
-                /* Remove absolute positioning on small screens */
                 width: calc(100% - 20px);
-                /* Adjust width */
                 text-align: center;
                 margin-bottom: 10px;
                 box-sizing: border-box;
-                /* Include padding in width */
+            }
+
+            .school-title h1 {
+                font-size: clamp(1.8em, 4.5vw, 2.5em);
+            }
+
+            .school-title p:nth-of-type(1) {
+                font-size: clamp(1em, 2vw, 1.3em);
+            }
+
+            .school-title p:nth-of-type(2) {
+                font-size: clamp(0.9em, 1.8vw, 1.2em);
             }
         }
 
@@ -558,11 +530,15 @@
             }
 
             .school-title h1 {
-                font-size: clamp(1.2em, 5vw, 2em);
+                font-size: clamp(1.5em, 5vw, 2em);
             }
 
-            .school-title p {
-                font-size: clamp(0.7em, 2.5vw, 1em);
+            .school-title p:nth-of-type(1) {
+                font-size: clamp(0.8em, 2.5vw, 1em);
+            }
+
+            .school-title p:nth-of-type(2) {
+                font-size: clamp(0.7em, 2.2vw, 0.9em);
             }
 
             .circular-photo-container {
@@ -595,20 +571,13 @@
         </div>
 
         <header>
-                    <div class="left-header-group">
+            <div class="left-header-group">
                 <img src="logo2.png" alt="Uttar Pradesh Government Logo" class="header-logo">
                 <img src="logo3.png" alt="Basic Shiksha Parishad Logo" class="header-logo">
                 <img src="nipun_bharat_logo.png" alt="Nipun Bharat Logo" class="header-logo">
             </div>
 
-            <div class="school-title">
-                <h1>Primary School Rabupura-1,Jewar</h1>
-                <p>Gautam Buddh Nagar, Uttar Pradesh</p>
-                <p>जहां हर बच्चा चमकता है।</p>
-            </div>
-
-            <img src="logo1.png" alt="School Logo" class="school-logo">
-            <div class="officer-photos-group">
+            <img src="logo1.png" alt="School Logo" class="school-logo"> <div class="officer-photos-group">
                 <div class="officer-details">
                     <div class="circular-photo-container">
                         <img src="bsa-officer.png" alt="BSA Officer">
@@ -621,6 +590,12 @@
                     </div>
                     <p>BEO Jewar<br>Mohd. Rashid</p>
                 </div>
+            </div>
+
+            <div class="school-title">
+                <h1>Primary School Rabupura-1,Jewar</h1>
+                <p>Gautam Buddh Nagar, Uttar Pradesh</p>
+                <p>जहां हर बच्चा चमकता है।</p>
             </div>
         </header>
 
@@ -646,7 +621,7 @@
     सरकारी विद्यालय बनाता है बच्चों को खेल-खेल में निपुण और तेज़।
   </p>
         </div>
-    
+
                 <section id="gallery" class="gallery-section">
             <h2>गैलरी</h2>
             <div class="gallery-container">
@@ -654,25 +629,7 @@
                     <a href="image1.jpg" download>
                         <img src="image1.jpg" alt="माता उन्मुखीकरण व खेल दिवस">
                     </a>
-                    <p class="caption">माता उन्मुखीकरण व बाल दिवस का आयोजन</p>
-                </div>
-                <div class="gallery-slide fade">
-                    <a href="image2.jpg" download>
-                        <img src="image2.jpg" alt="छात्रों का स्वागत ग्रीष्मावकाश के बाद">
-                    </a>
-                    <p class="caption">ग्रीष्मावकाश के बाद छात्रों का स्वागत</p>
-                </div>
-                <div class="gallery-slide fade">
-                    <a href="image3.jpg" download>
-                        <img src="image3.jpg" alt="जेवर विधायक ठाकुर धीरेंद्र सिंह जी द्वारा विद्यालय का भ्रमण">
-                    </a>
-                    <p class="caption">जेवर विधायक ठाकुर धीरेंद्र सिंह जी द्वारा विद्यालय का भ्रमण।</p>
-                </div>
-                <div class="gallery-slide fade">
-                    <a href="image4.jpg" download>
-                        <img src="image4.jpg" alt="गैलरी चित्र 4">
-                    </a>
-                    <p class="caption">विद्यालय द्वारा स्कूल चलो अभियान रैली का आयोजन </p>
+                    <p class="caption">माता उन्मुखीकरण व बाल दिवस का आयोजन </p>
                 </div>
                 <div class="gallery-slide fade">
                     <a href="image5.jpg" download>
@@ -695,7 +652,7 @@
                 <div class="gallery-slide fade">
                     <a href="image8.jpg" download>
                         <img src="image8.jpg" alt="गैलरी चित्र 8">
-                    </a>
+            </a>
                     <p class="caption">15 अगस्त</p>
                 </div>
                 <div class="gallery-slide fade">
@@ -933,7 +890,7 @@
 
         <section style="padding: 20px; background-color: #fff0f0;">
             <div style="background: red; color: white; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; font-size: 20px;">
-                
+
                 <marquee behavior="scroll" direction="left" scrollamount="6">
                     ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा। सभी को सूचित किया जाता है।
                 </marquee>
@@ -952,8 +909,8 @@
             </div>
         </section>
 
-                        
-        
+
+
         <section id="school-video-single" style="padding: 40px; background-color: #f0f0f0; text-align: center;">
     <h2 style="color: blue; margin-bottom: 30px;">कला प्रदर्शन</h2>
     <div style="max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
@@ -963,7 +920,7 @@
         </video>
         <p style="margin-top: 15px; font-style: italic; color: #555;">(कला प्रदर्शन)</p>
     </div>
-        </section> 
+        </section>
 
      <section id="notices" class="notices-section">
             <h2>सूचनाएँ और घोषणाएँ</h2>
@@ -984,7 +941,7 @@
             <h2>प्रवेश जानकारी</h2>
 
             <p><strong>कैसे दाखिला लें?</strong><br> विद्यार्थी विद्यालय में आकर दाखिला ले सकते हैं।</p>
-            
+
             <p><strong>आवश्यक दस्तावेज:</strong><br>
                 - आवेदक का आधार कार्ड (वैकल्पिक)<br>
                 - आयु 6 वर्ष कक्षा 1 में दाखिले के लिए।<br>
@@ -1037,7 +994,7 @@
                 <p>
                     Designed by
                     <a target="_blank" style="color: yellow; font-weight: bold;">
-                        CHHAMA RANI SINGH Assistant Teacher Rabupura 1 
+                        CHHAMA RANI SINGH Assistant Teacher Rabupura 1
                     </a>
                 </p>
 
@@ -1130,4 +1087,3 @@
 </body>
 
 </html>
-   
