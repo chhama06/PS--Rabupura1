@@ -33,24 +33,30 @@
             left: 10px;
             font-weight: bold;
             font-size: 18px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Semi-transparent white background */
             padding: 8px;
             border-radius: 5px;
             box-shadow: 0 0 5px #ccc;
-            z-index: 200; /* Higher z-index to be on top of everything */
-            color: #333; /* Darker text color */
+            z-index: 200;
+            /* Higher z-index to be on top of everything */
+            color: #333;
+            /* Darker text color */
         }
 
         header {
             display: flex;
-            align-items: flex-end; /* Align items to the bottom */
+            align-items: flex-end;
+            /* Align items to the bottom */
             justify-content: space-between;
-            padding: 10px 20px 0 20px; /* Reduced top/bottom padding */
+            padding: 10px 20px 0 20px;
+            /* Reduced top/bottom padding */
             background: #f1f1f1;
             flex-wrap: wrap;
             position: relative;
             overflow: hidden;
-            min-height: 180px; /* Ensure enough height for the background and content */
+            min-height: 180px;
+            /* Ensure enough height for the background and content */
         }
 
         /* Background image for the entire header */
@@ -61,22 +67,29 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('school-bg.jpg'); /* IMPORTANT: Replace with your actual background image path */
+            background-image: url('school-bg.jpg');
+            /* IMPORTANT: Replace with your actual background image path */
             background-size: cover;
             background-position: center;
-            opacity: 0.4; /* Adjust opacity for visibility */
-            z-index: 0; /* Place behind all header content */
+            opacity: 0.4;
+            /* Adjust opacity for visibility */
+            z-index: 0;
+            /* Place behind all header content */
         }
 
         /* Group for logos on the left side of the header */
         .left-header-group {
             display: flex;
-            align-items: flex-end; /* Align to the bottom of the group */
+            align-items: flex-end;
+            /* Align to the bottom of the group */
             gap: 15px;
             flex-wrap: wrap;
-            z-index: 1; /* Ensure above background */
-            position: relative; /* Needed for positioning inside header */
-            padding-bottom: 10px; /* Small padding at the bottom for spacing */
+            z-index: 1;
+            /* Ensure above background */
+            position: relative;
+            /* Needed for positioning inside header */
+            padding-bottom: 10px;
+            /* Small padding at the bottom for spacing */
         }
 
         .header-logo {
@@ -90,17 +103,24 @@
             text-align: center;
             flex-grow: 1;
             min-width: 250px;
-            margin: 0 15px; /* Adjust margin */
-            padding: 10px 10px; /* Reduced padding */
+            margin: 0 15px;
+            /* Adjust margin */
+            padding: 10px 10px;
+            /* Reduced padding */
             position: relative;
-            z-index: 1; /* Ensure text is above background */
+            z-index: 1;
+            /* Ensure text is above background */
             border-radius: 8px;
             overflow: hidden;
-            display: flex; /* Use flexbox for internal alignment */
+            display: flex;
+            /* Use flexbox for internal alignment */
             flex-direction: column;
-            justify-content: center; /* Vertically center content */
-            align-items: center; /* Horizontally center content */
-            padding-bottom: 0; /* Adjust if needed to reduce vertical space */
+            justify-content: center;
+            /* Vertically center content */
+            align-items: center;
+            /* Horizontally center content */
+            padding-bottom: 0;
+            /* Adjust if needed to reduce vertical space */
         }
 
         /* Remove school-title::before as the main header::before will handle the background */
@@ -112,26 +132,35 @@
             color: #000080;
             font-family: 'Georgia', serif;
             margin: 0;
-            font-size: clamp(2.5em, 4vw, 3.5em); /* Larger font size */
+            font-size: clamp(2.5em, 4vw, 3.5em);
+            /* Larger font size */
             text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), -1px -1px 3px rgba(255, 255, 255, 0.8);
         }
 
         .school-title p {
             font-style: italic;
-            margin: 5px 0 0 0; /* Reduced top margin */
+            margin: 5px 0 0 0;
+            /* Reduced top margin */
         }
 
-        .school-title p:nth-of-type(1) { /* Gautam Buddh Nagar, Uttar Pradesh */
-            color: #8B0000; /* Dark Red */
-            font-family: 'Verdana', sans-serif; /* Different font */
-            font-size: clamp(1.2em, 2vw, 1.8em); /* Bigger font size */
+        .school-title p:nth-of-type(1) {
+            /* Gautam Buddh Nagar, Uttar Pradesh */
+            color: #8B0000;
+            /* Dark Red */
+            font-family: 'Verdana', sans-serif;
+            /* Different font */
+            font-size: clamp(1.2em, 2vw, 1.8em);
+            /* Bigger font size */
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
         }
 
-        .school-title p:nth-of-type(2) { /* Tagline */
-            color: #006400; /* Dark Green */
+        .school-title p:nth-of-type(2) {
+            /* Tagline */
+            color: #006400;
+            /* Dark Green */
             font-family: 'Comic Sans MS', cursive;
-            font-size: clamp(1.1em, 1.5vw, 1.5em); /* Bigger font size */
+            font-size: clamp(1.1em, 1.5vw, 1.5em);
+            /* Bigger font size */
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
         }
 
@@ -149,20 +178,25 @@
         /* Container for the right-side officer photos and names */
         .officer-photos-group {
             display: flex;
-            align-items: flex-end; /* Align items to the bottom */
+            align-items: flex-end;
+            /* Align items to the bottom */
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-left: 0; /* Remove left margin */
+            margin-left: 0;
+            /* Remove left margin */
             z-index: 1;
-            position: relative; /* Needed for positioning inside header */
-            padding-bottom: 10px; /* Small padding at the bottom for spacing */
+            position: relative;
+            /* Needed for positioning inside header */
+            padding-bottom: 10px;
+            /* Small padding at the bottom for spacing */
         }
 
         .officer-details {
             text-align: center;
             flex-shrink: 0;
-            margin-bottom: 0; /* Reduced bottom margin */
+            margin-bottom: 0;
+            /* Reduced bottom margin */
         }
 
         .circular-photo-container {
@@ -282,19 +316,50 @@
         }
 
         /* Individual icon colors for Facilities section */
-        .facility-item .fa-apple-alt { color: #E74C3C; }
-        .facility-item .fa-tv { color: #3498DB; }
-        .facility-item .fa-palette { color: #F1C40F; }
-        .facility-item .fa-chair { color: #2ECC71; }
-        .facility-item .fa-swings { color: #9B59B6; }
-        .facility-item .fa-baseball-ball { color: #E67E22; }
-        .facility-item .fa-tint { color: #34495E; }
-        .facility-item .fa-toilet { color: #7F8C8D; }
+        .facility-item .fa-apple-alt {
+            color: #E74C3C;
+        }
+
+        .facility-item .fa-tv {
+            color: #3498DB;
+        }
+
+        .facility-item .fa-palette {
+            color: #F1C40F;
+        }
+
+        .facility-item .fa-chair {
+            color: #2ECC71;
+        }
+
+        .facility-item .fa-swings {
+            color: #9B59B6;
+        }
+
+        .facility-item .fa-baseball-ball {
+            color: #E67E22;
+        }
+
+        .facility-item .fa-tint {
+            color: #34495E;
+        }
+
+        .facility-item .fa-toilet {
+            color: #7F8C8D;
+        }
 
         /* Individual icon colors for Medical section */
-        .medical-item .fa-syringe { color: #1ABC9C; }
-        .medical-item .fa-pills { color: #C0392B; }
-        .medical-item .fa-worm { color: #2C3E50; }
+        .medical-item .fa-syringe {
+            color: #1ABC9C;
+        }
+
+        .medical-item .fa-pills {
+            color: #C0392B;
+        }
+
+        .medical-item .fa-worm {
+            color: #2C3E50;
+        }
 
 
         .facility-item i,
@@ -326,7 +391,7 @@
         }
 
         .gallery-slide {
-               display: none;
+            display: none;
             text-align: center;
             padding-bottom: 10px;
         }
@@ -405,6 +470,87 @@
             }
         }
 
+        /* --- WHY CHOOSE US SECTION STYLES --- */
+        .why-choose-us-section {
+            padding: 60px 20px;
+            background-color: #f4f7f6;
+            text-align: center;
+        }
+
+        .why-choose-us-section h2 {
+            color: #007BFF;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .why-choose-us-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #28a745;
+            border-radius: 2px;
+        }
+
+        .why-choose-us-section .section-description {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            color: #007BFF;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+
         /* --- Media Queries for Responsiveness --- */
 
         /* For screens smaller than 1024px (laptops/large tablets) */
@@ -442,6 +588,26 @@
             .school-title p:nth-of-type(2) {
                 font-size: clamp(1em, 1.3vw, 1.3em);
             }
+
+            .why-choose-us-section h2 {
+                font-size: 2.2em;
+            }
+
+            .why-choose-us-section .section-description {
+                font-size: 1.1em;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .feature-icon {
+                font-size: 2.8em;
+            }
+
+            .feature-item h3 {
+                font-size: 1.3em;
+            }
         }
 
         /* For screens smaller than 768px (common tablet breakpoint) */
@@ -450,14 +616,17 @@
                 flex-direction: column;
                 align-items: center;
                 padding: 10px;
-                min-height: unset; /* Remove min-height for mobile */
+                min-height: unset;
+                /* Remove min-height for mobile */
             }
 
             .left-header-group {
                 width: 100%;
                 justify-content: center;
-                margin-bottom: 10px; /* Reduced margin */
-                padding-bottom: 0; /* Remove padding */
+                margin-bottom: 10px;
+                /* Reduced margin */
+                padding-bottom: 0;
+                /* Remove padding */
             }
 
             .header-logo {
@@ -468,20 +637,25 @@
                 width: 100%;
                 margin: 10px 0;
                 min-width: unset;
-                padding: 5px 0; /* Reduced padding */
+                padding: 5px 0;
+                /* Reduced padding */
             }
 
             .school-logo {
-                order: unset; /* Revert order */
+                order: unset;
+                /* Revert order */
                 width: 150px;
-                margin: 10px 0; /* Add margin for spacing */
+                margin: 10px 0;
+                /* Add margin for spacing */
             }
 
             .officer-photos-group {
                 width: 100%;
                 justify-content: center;
-                margin-top: 10px; /* Reduced margin */
-                padding-bottom: 0; /* Remove padding */
+                margin-top: 10px;
+                /* Reduced margin */
+                padding-bottom: 0;
+                /* Remove padding */
             }
 
             .circular-photo-container {
@@ -516,6 +690,34 @@
 
             .school-title p:nth-of-type(2) {
                 font-size: clamp(0.9em, 1.8vw, 1.2em);
+            }
+
+            .why-choose-us-section {
+                padding: 40px 15px;
+            }
+
+            .why-choose-us-section h2 {
+                font-size: 2em;
+            }
+
+            .why-choose-us-section .section-description {
+                font-size: 1em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-item {
+                padding: 25px;
+            }
+
+            .feature-icon {
+                font-size: 2.5em;
+            }
+
+            .feature-item h3 {
+                font-size: 1.2em;
             }
         }
 
@@ -559,6 +761,18 @@
                 font-size: 14px;
                 padding: 5px;
             }
+
+            .why-choose-us-section h2 {
+                font-size: 1.8em;
+            }
+
+            .feature-icon {
+                font-size: 2.2em;
+            }
+
+            .feature-item h3 {
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
@@ -577,7 +791,8 @@
                 <img src="nipun_bharat_logo.png" alt="Nipun Bharat Logo" class="header-logo">
             </div>
 
-            <img src="logo1.png" alt="School Logo" class="school-logo"> <div class="officer-photos-group">
+            <img src="logo1.png" alt="School Logo" class="school-logo">
+            <div class="officer-photos-group">
                 <div class="officer-details">
                     <div class="circular-photo-container">
                         <img src="bsa-officer.png" alt="BSA Officer">
@@ -600,7 +815,8 @@
         </header>
 
         <div class="announcement">
-            <marquee behavior="scroll" direction="left"> ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा। प्रवेश 2025-26 हेतु 30 सितम्बर अंतिम तिथि है।</marquee>
+            <marquee behavior="scroll" direction="left"> ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा। प्रवेश 2025-26
+                हेतु 30 सितम्बर अंतिम तिथि है।</marquee>
         </div>
 
         <nav>
@@ -615,14 +831,15 @@
             <a href="#notices">सूचनाएं</a>
             <a href="#contact">संपर्क</a>
         </nav>
-        <div style="background-color:#f0f8ff; padding:20px; border-radius:10px; font-family: 'Arial', sans-serif; color:#333; text-align:center;">
-  <h2 style="color:#28a745;font-size:2em; margin-bottom:10px;">अनुशासन, संस्कार और शिक्षा का मेल,</h2>
-  <p style="font-size:1.2em; line-height:1.6; color:#555;">
-    सरकारी विद्यालय बनाता है बच्चों को खेल-खेल में निपुण और तेज़।
-  </p>
+        <div
+            style="background-color:#f0f8ff; padding:20px; border-radius:10px; font-family: 'Arial', sans-serif; color:#333; text-align:center;">
+            <h2 style="color:#28a745;font-size:2em; margin-bottom:10px;">अनुशासन, संस्कार और शिक्षा का मेल,</h2>
+            <p style="font-size:1.2em; line-height:1.6; color:#555;">
+                सरकारी विद्यालय बनाता है बच्चों को खेल-खेल में निपुण और तेज़।
+            </p>
         </div>
 
-                <section id="gallery" class="gallery-section">
+        <section id="gallery" class="gallery-section">
             <h2>गैलरी</h2>
             <div class="gallery-container">
                 <div class="gallery-slide fade">
@@ -641,6 +858,12 @@
                     <a href="image6.jpg" download>
                         <img src="image6.jpg" alt="गैलरी चित्र 6">
                     </a>
+                    <p class="caption">15 अगस्त </p>
+                </div>
+                <div class="gallery-slide fade">
+                    <a href="image6.jpg" download>
+                        <img src="image6.jpg" alt="गैलरी चित्र 6">
+                    </a>
                     <p class="caption">वृक्षारोपण</p>
                 </div>
                 <div class="gallery-slide fade">
@@ -652,7 +875,7 @@
                 <div class="gallery-slide fade">
                     <a href="image8.jpg" download>
                         <img src="image8.jpg" alt="गैलरी चित्र 8">
-            </a>
+                    </a>
                     <p class="caption">15 अगस्त</p>
                 </div>
                 <div class="gallery-slide fade">
@@ -751,46 +974,62 @@
                     <span class="next" onclick="changeSlide(1)">&#10095;</span>
                 </div>
             </div>
-    </section>
+        </section>
 
         <section id="home" style="padding: 40px; text-align: center;">
             <h2 style="color: blue;">प्रधानाचार्य का स्वागत संदेश</h2>
             <p style="color: black; font-size: 18px; max-width: 800px; margin: auto; animation: fadeIn 2s;">
-                "आप सभी का इस ज्ञान के मंदिर में हार्दिक स्वागत है। शिक्षा ही वह दीप है जो अज्ञानता के अंधकार को दूर करता है।
+                "आप सभी का इस ज्ञान के मंदिर में हार्दिक स्वागत है। शिक्षा ही वह दीप है जो अज्ञानता के अंधकार को दूर
+                करता है।
                 आइए, मिलकर मेहनत करें, सपनों को साकार करें और उज्जवल भविष्य की ओर अग्रसर हों।"
             </p>
         </section>
 
         <section id="notices" style="padding: 40px; background-color: #f9f9f9;">
             <h2 style="color: blue; text-align: center;">सूचना पट्ट</h2>
-            <div style="max-width: 700px; margin: auto; background: white; border: 2px solid #007BFF; padding: 20px; border-radius: 10px;">
-                       <ul style="color: black; font-size: 16px; text-align: left;">
-                    <li> <strong>प्रवेश सूचना:</strong> शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि 30 सितम्बर 2025।</li>
+            <div
+                style="max-width: 700px; margin: auto; background: white; border: 2px solid #007BFF; padding: 20px; border-radius: 10px;">
+                <ul style="color: black; font-size: 16px; text-align: left;">
+                    <li> <strong>प्रवेश सूचना:</strong> शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि 30
+                        सितम्बर 2025।</li>
                     <li> <strong>अवकाश:</strong> ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।</li>
-                    <li> <strong>डाउनलोड:</strong> <a href="timetable.pdf" target="_blank">समय सारणी PDF</a> उपलब्ध है।</li>
+                    <li> <strong>डाउनलोड:</strong> <a href="timetable.pdf" target="_blank">समय सारणी PDF</a> उपलब्ध है।
+                    </li>
                 </ul>
             </div>
         </section>
 
         <section id="about" style="padding: 40px; background-color: #eef7ff;">
             <h2 style="color: blue; text-align: center;">हमारे बारे में</h2>
-            <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; text-align: justify; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-                हमारा प्राथमिक विद्यालय रबूपुरा 1, जेवर, बेसिक शिक्षा परिषद उत्तर प्रदेश के अंतर्गत है। प्राथमिक विद्यालय रबूपुरा 1 का निर्माण 1965 में किया गया। यह शिक्षा के क्षेत्र में उत्कृष्टता की मिसाल है। यहाँ पर छात्रों को गुणवत्तापूर्ण शिक्षा, नैतिक मूल्यों और समग्र विकास के लिए एक प्रेरणादायक वातावरण प्रदान किया जाता है।<br><br>
+            <div
+                style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; text-align: justify; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                हमारा प्राथमिक विद्यालय रबूपुरा 1, जेवर, बेसिक शिक्षा परिषद उत्तर प्रदेश के अंतर्गत है। प्राथमिक
+                विद्यालय रबूपुरा 1 का निर्माण 1965 में किया गया। यह शिक्षा के क्षेत्र में उत्कृष्टता की मिसाल है। यहाँ
+                पर छात्रों को गुणवत्तापूर्ण शिक्षा, नैतिक मूल्यों और समग्र विकास के लिए एक प्रेरणादायक वातावरण प्रदान
+                किया जाता है।<br><br>
 
-                हमारा उद्देश्य केवल पुस्तकीय ज्ञान देना नहीं, बल्कि विद्यार्थियों को आत्मनिर्भर, जिम्मेदार और समाज के लिए उपयोगी नागरिक बनाना है। विद्यालय में अनुभवी और समर्पित शिक्षकों की टीम है जो हर छात्र को उसकी प्रतिभा के अनुसार मार्गदर्शन देती है।<br><br>
+                हमारा उद्देश्य केवल पुस्तकीय ज्ञान देना नहीं, बल्कि विद्यार्थियों को आत्मनिर्भर, जिम्मेदार और समाज के
+                लिए उपयोगी नागरिक बनाना है। विद्यालय में अनुभवी और समर्पित शिक्षकों की टीम है जो हर छात्र को उसकी
+                प्रतिभा के अनुसार मार्गदर्शन देती है।<br><br>
 
-                आधुनिक सुविधाओं, पुस्तकालय,और खेलकूद की गतिविधियों के माध्यम से हम छात्रों के सर्वांगीण विकास पर जोर देते हैं। हम यह मानते हैं कि शिक्षा एक यात्रा है, और हम हर छात्र के साथ मिलकर यह यात्रा सफल बनाने के लिए प्रतिबद्ध हैं।<br><br>
+                आधुनिक सुविधाओं, पुस्तकालय,और खेलकूद की गतिविधियों के माध्यम से हम छात्रों के सर्वांगीण विकास पर जोर
+                देते हैं। हम यह मानते हैं कि शिक्षा एक यात्रा है, और हम हर छात्र के साथ मिलकर यह यात्रा सफल बनाने के
+                लिए प्रतिबद्ध हैं।<br><br>
 
                 वर्तमान जेवर विधायक श्री धीरेंद्र सिंह जी ने यहीं से प्राथमिक शिक्षा प्राप्त की। <br><br>
 
-                <strong>शुल्क:</strong> विद्यालय में किसी भी तरह की फीस नहीं ली जाती है। सरकार द्वारा DBT के माध्यम से ₹1200 प्रत्येक छात्र को प्रति वर्ष दिए जाते हैं।
+                <strong>शुल्क:</strong> विद्यालय में किसी भी तरह की फीस नहीं ली जाती है। सरकार द्वारा DBT के माध्यम से
+                ₹1200 प्रत्येक छात्र को प्रति वर्ष दिए जाते हैं।
             </div>
         </section>
 
         <section id="academics" style="padding: 40px; background-color: #fff7e6;">
             <h2 style="color: blue; text-align: center;">शैक्षणिक पाठ्यक्रम</h2>
-            <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; text-align: justify; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-                हमारे विद्यालय में विद्यार्थियों को एक संतुलित, समृद्ध और समग्र पाठ्यक्रम प्रदान किया जाता है, जो उनके बौद्धिक, नैतिक, शारीरिक और रचनात्मक विकास पर केंद्रित है। हमारा शैक्षणिक ढांचा राष्ट्रीय शिक्षा नीति एवं शिक्षा बोर्ड द्वारा निर्धारित मानकों पर आधारित है।<br><br>
+            <div
+                style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; text-align: justify; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                हमारे विद्यालय में विद्यार्थियों को एक संतुलित, समृद्ध और समग्र पाठ्यक्रम प्रदान किया जाता है, जो उनके
+                बौद्धिक, नैतिक, शारीरिक और रचनात्मक विकास पर केंद्रित है। हमारा शैक्षणिक ढांचा राष्ट्रीय शिक्षा नीति
+                एवं शिक्षा बोर्ड द्वारा निर्धारित मानकों पर आधारित है।<br><br>
 
                 हम निम्नलिखित विषयों की शिक्षा प्रदान करते हैं:
                 <ul style="margin-left: 20px; margin-top: 10px;">
@@ -799,63 +1038,71 @@
                     <li>कला, शारीरिक शिक्षा एवं योग, पुस्तकालय</li>
                 </ul><br>
 
-                प्रत्येक कक्षा के लिए पाठ्यक्रम को इस तरह से तैयार किया गया है कि वह छात्रों में तार्किक सोच, समस्या समाधान की क्षमता, और जीवन कौशल को विकसित कर सके। साथ ही, हम परियोजना-आधारित शिक्षण, समूह कार्य और गतिविधि आधारित शिक्षण को भी बढ़ावा देते हैं, जिससे बच्चे अधिक रुचि और आत्मविश्वास के साथ सीख सकें।
+                प्रत्येक कक्षा के लिए पाठ्यक्रम को इस तरह से तैयार किया गया है कि वह छात्रों में तार्किक सोच, समस्या
+                समाधान की क्षमता, और जीवन कौशल को विकसित कर सके। साथ ही, हम परियोजना-आधारित शिक्षण, समूह कार्य और
+                गतिविधि आधारित शिक्षण को भी बढ़ावा देते हैं, जिससे बच्चे अधिक रुचि और आत्मविश्वास के साथ सीख सकें।
             </div>
         </section>
 
         <section id="why-choose-us" class="why-choose-us-section">
-    <div class="container">
-        <h2>हमें क्यों चुनें?</h2>
-        <p class="section-description">हमारा स्कूल आपके बच्चे के उज्ज्वल भविष्य के लिए प्रतिबद्ध है।</p>
+            <div class="container">
+                <h2>हमें क्यों चुनें?</h2>
+                <p class="section-description">हमारा स्कूल आपके बच्चे के उज्ज्वल भविष्य के लिए प्रतिबद्ध है।</p>
 
-        <div class="features-grid">
+                <div class="features-grid">
 
-            <div class="feature-item">
-                <i class="fas fa-chalkboard-teacher feature-icon"></i>
-                <h3>अनुभवी और समर्पित शिक्षक</h3>
-                <p>हमारे शिक्षक अनुभवी और बच्चों के प्रति पूरी तरह समर्पित हैं, जो गुणवत्तापूर्ण शिक्षा प्रदान करते हैं।</p>
+                    <div class="feature-item">
+                        <i class="fas fa-chalkboard-teacher feature-icon"></i>
+                        <h3>अनुभवी और समर्पित शिक्षक</h3>
+                        <p>हमारे शिक्षक अनुभवी और बच्चों के प्रति पूरी तरह समर्पित हैं, जो गुणवत्तापूर्ण शिक्षा प्रदान
+                            करते हैं।</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <i class="fas fa-child feature-icon"></i>
+                        <h3>बाल-केंद्रित शिक्षा</h3>
+                        <p>हमारा पाठ्यक्रम प्रत्येक बच्चे की व्यक्तिगत जरूरतों और सीखने की शैली पर केंद्रित है।</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <i class="fas fa-palette feature-icon"></i>
+                        <h3>रचनात्मक और खेल गतिविधियाँ</h3>
+                        <p>पढ़ाई के साथ-साथ, हम बच्चों के सर्वांगीण विकास के लिए कला, संगीत और खेल को बढ़ावा देते हैं।
+                        </p>
+                    </div>
+
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>सुरक्षित और पोषणकारी वातावरण</h3>
+                        <p>हमारा स्कूल एक सुरक्षित, स्वच्छ और सहायक वातावरण प्रदान करता है जहाँ बच्चे खुशी से सीखते हैं।
+                        </p>
+                    </div>
+
+                    <div class="feature-item">
+                        <i class="fas fa-microscope feature-icon"></i>
+                        <h3>आधुनिक शिक्षण पद्धतियाँ</h3>
+                        <p>हम इंटरैक्टिव और व्यावहारिक सीखने के अनुभवों के लिए नवीनतम शिक्षण तकनीकों का उपयोग करते हैं।
+                        </p>
+                    </div>
+
+                    <div class="feature-item">
+                        <i class="fas fa-hands-helping feature-icon"></i>
+                        <h3>समुदाय आधारित शिक्षा</h3>
+                        <p>हम माता-पिता और स्थानीय समुदाय के साथ मिलकर काम करते हैं ताकि बच्चों को बेहतर शिक्षा मिल
+                            सके।</p>
+                    </div>
+
+                </div>
             </div>
-
-            <div class="feature-item">
-                <i class="fas fa-child feature-icon"></i>
-                <h3>बाल-केंद्रित शिक्षा</h3>
-                <p>हमारा पाठ्यक्रम प्रत्येक बच्चे की व्यक्तिगत जरूरतों और सीखने की शैली पर केंद्रित है।</p>
-            </div>
-
-            <div class="feature-item">
-                <i class="fas fa-palette feature-icon"></i>
-                <h3>रचनात्मक और खेल गतिविधियाँ</h3>
-                <p>पढ़ाई के साथ-साथ, हम बच्चों के सर्वांगीण विकास के लिए कला, संगीत और खेल को बढ़ावा देते हैं।</p>
-            </div>
-
-            <div class="feature-item">
-                <i class="fas fa-shield-alt feature-icon"></i>
-                <h3>सुरक्षित और पोषणकारी वातावरण</h3>
-                <p>हमारा स्कूल एक सुरक्षित, स्वच्छ और सहायक वातावरण प्रदान करता है जहाँ बच्चे खुशी से सीखते हैं।</p>
-            </div>
-
-            <div class="feature-item">
-                <i class="fas fa-microscope feature-icon"></i>
-                <h3>आधुनिक शिक्षण पद्धतियाँ</h3>
-                <p>हम इंटरैक्टिव और व्यावहारिक सीखने के अनुभवों के लिए नवीनतम शिक्षण तकनीकों का उपयोग करते हैं।</p>
-            </div>
-
-            <div class="feature-item">
-                <i class="fas fa-hands-helping feature-icon"></i>
-                <h3>समुदाय आधारित शिक्षा</h3>
-                <p>हम माता-पिता और स्थानीय समुदाय के साथ मिलकर काम करते हैं ताकि बच्चों को बेहतर शिक्षा मिल सके।</p>
-            </div>
-
-        </div>
-    </div>
         </section>
-
         <section id="facilities" style="padding: 40px; background-color: #e8f5e9;">
             <h2 style="color: blue; text-align: center;">सुविधाएँ</h2>
-            <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+            <div
+                style="max-width: 900px; margin: auto; color: black; font-size: 18px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
                 <ul style="list-style: none; padding-left: 0;">
                     <li class="facility-item"><i class="fas fa-apple-alt"></i> पोषित आहार, फल, दूध (MDM)</li>
-                    <li class="facility-item"><i class="fas fa-tv"></i> स्मार्ट कक्षाएं (75 इंच टच स्क्रीन LED और 55 इंच स्मार्ट LED)</li>
+                    <li class="facility-item"><i class="fas fa-tv"></i> स्मार्ट कक्षाएं (75 इंच टच स्क्रीन LED और 55
+                        इंच स्मार्ट LED)</li>
                     <li class="facility-item"><i class="fas fa-palette"></i> रंगीन एवं आकर्षक कक्षाएँ</li>
                     <li class="facility-item"><i class="fas fa-chair"></i> आरामदायक बेंच</li>
                     <li class="facility-item"><i class="fas fa-swings"></i> विभिन्न प्रकार के झूले</li>
@@ -868,54 +1115,65 @@
 
         <section id="medical" style="padding: 40px; background-color: #fff3f3;">
             <h2 style="color: blue; text-align: center;">चिकित्सा</h2>
-            <div style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: justify;">
-                प्राथमिक विद्यालय रबूपुरा 1 में प्राथमिक चिकित्सा किट (First Aid Kit) उपलब्ध रहती है। सरकार द्वारा चलाए जा रहे अभियानों के तहत समय-समय पर छात्रों को निम्नलिखित स्वास्थ्य सेवाएं प्रदान की जाती हैं:
+            <div
+                style="max-width: 900px; margin: auto; color: black; font-size: 18px; line-height: 1.8; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: justify;">
+                प्राथमिक विद्यालय रबूपुरा 1 में प्राथमिक चिकित्सा किट (First Aid Kit) उपलब्ध रहती है। सरकार द्वारा
+                चलाए जा रहे अभियानों के तहत समय-समय पर छात्रों को निम्नलिखित स्वास्थ्य सेवाएं प्रदान की जाती हैं:
                 <ul style="margin-top: 15px; margin-left: 20px;">
                     <li class="medical-item"><i class="fas fa-syringe"></i> आवश्यक टीकाकरण</li>
                     <li class="medical-item"><i class="fas fa-pills"></i> आयरन की गोलियां</li>
                     <li class="medical-item"><i class="fas fa-worm"></i> पेट के कीड़ों की दवा (एलबेंडाजोल)</li>
                 </ul>
-                 यह सभी सेवाएं पूर्णतः निःशुल्क प्रदान की जाती हैं और बच्चों के स्वास्थ्य की नियमित निगरानी की जाती है।
+                यह सभी सेवाएं पूर्णतः निःशुल्क प्रदान की जाती हैं और बच्चों के स्वास्थ्य की नियमित निगरानी की जाती है।
             </div>
         </section>
 
         <section id="staff" style="padding: 40px; background-color: #f0f8ff;">
             <h2 style="color: blue; text-align: center;">शिक्षक / स्टाफ</h2>
-            <div style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); font-size: 18px; color: black;">
+            <div
+                style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); font-size: 18px; color: black;">
                 <p style="text-align: center;">हमारे विद्यालय में अनुभवी और समर्पित शिक्षकों की एक सशक्त टीम है:</p>
                 <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
                     <li class="staff-member">
                         <img src="manisha-singh.jpg" alt="Manisha Singh">
-                        <span class="staff-name-hm">Manisha Singh</span> – <span class="staff-desig-hm">प्रधानाध्यापक (Incharge Headmaster)</span>
+                        <span class="staff-name-hm">Manisha Singh</span> – <span class="staff-desig-hm">प्रधानाध्यापक
+                            (Incharge Headmaster)</span>
                     </li>
                     <li class="staff-member">
                         <img src="manisha-rajput.jpg" alt="Manisha Rajput">
-                        <span class="staff-name-at">Manisha Rajput</span> – <span class="staff-desig-at">सहायक अध्यापक (Assistant Teacher)</span>
+                        <span class="staff-name-at">Manisha Rajput</span> – <span class="staff-desig-at">सहायक
+                            अध्यापक (Assistant Teacher)</span>
                     </li>
                     <li class="staff-member">
                         <img src="chhama-rani-singh.jpg" alt="Chhama Rani Singh">
-                        <span class="staff-name-at">Chhama Rani Singh</span> – <span class="staff-desig-at">सहायक अध्यापक (Assistant Teacher)</span>
+                        <span class="staff-name-at">Chhama Rani Singh</span> – <span class="staff-desig-at">सहायक
+                            अध्यापक (Assistant Teacher)</span>
                     </li>
                     <li class="staff-member">
                         <img src="hemlata-sharma.jpg" alt="Hemlata Sharma">
-                        <span class="staff-name-sm">Hemlata Sharma</span> – <span class="staff-desig-sm">शिक्षा मित्र (Shiksha Mitra)</span>
+                        <span class="staff-name-sm">Hemlata Sharma</span> – <span class="staff-desig-sm">शिक्षा मित्र
+                            (Shiksha Mitra)</span>
                     </li>
                     <li class="staff-member">
                         <img src="danvir-sharma.jpg" alt="Danvir Sharma">
-                        <span class="staff-name-sm">Danvir Sharma</span> – <span class="staff-desig-sm">शिक्षा मित्र (Shiksha Mitra)</span>
+                        <span class="staff-name-sm">Danvir Sharma</span> – <span class="staff-desig-sm">शिक्षा मित्र
+                            (Shiksha Mitra)</span>
                     </li>
                     <li class="staff-member">
                         <img src="bhavna-sharma.jpg" alt="Bhavna Sharma">
-                        <span class="staff-name-sm">Bhavna Sharma</span> – <span class="staff-desig-sm">शिक्षा मित्र (Shiksha Mitra)</span>
+                        <span class="staff-name-sm">Bhavna Sharma</span> – <span class="staff-desig-sm">शिक्षा मित्र
+                            (Shiksha Mitra)</span>
                     </li>
                 </ul>
             </div>
         </section>
 
         <section id="admission" style="padding: 40px; background-color: #fefbe9;">
-               <h2 style="color: blue; text-align: center;">प्रवेश जानकारी</h2>
-            <div style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; font-size: 18px; color: black; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); line-height: 1.8;">
-                <p> <strong>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: <span style="color:red;">30 सितम्बर 2025</span></strong></p>
+            <h2 style="color: blue; text-align: center;">प्रवेश जानकारी</h2>
+            <div
+                style="max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; font-size: 18px; color: black; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); line-height: 1.8;">
+                <p> <strong>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: <span style="color:red;">30
+                            सितम्बर 2025</span></strong></p>
 
                 <p>➤ <strong>प्रवेश कैसे लें:</strong> विद्यालय में आकर संपर्क करें।</p>
 
@@ -936,7 +1194,8 @@
         </section>
 
         <section style="padding: 20px; background-color: #fff0f0;">
-            <div style="background: red; color: white; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; font-size: 20px;">
+            <div
+                style="background: red; color: white; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; font-size: 20px;">
 
                 <marquee behavior="scroll" direction="left" scrollamount="6">
                     ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा। सभी को सूचित किया जाता है।
@@ -946,7 +1205,8 @@
 
         <section id="notice" style="padding: 40px; background-color: #e3f2fd;">
             <h2 style="color: blue; text-align: center;">सूचना पट्ट (Notice Board)</h2>
-            <div style="max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); font-size: 18px; color: black;">
+            <div
+                style="max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); font-size: 18px; color: black;">
                 <ul style="list-style-type: ' '; padding-left: 20px;">
                     <li>शैक्षिक वर्ष 2025-26 के लिए प्रवेश चालू है। अंतिम तिथि: 30 सितम्बर 2025</li>
                     <li>ग्रीष्मकालीन अवकाश 20 मई से 15 जून तक रहेगा।</li>
@@ -959,17 +1219,18 @@
 
 
         <section id="school-video-single" style="padding: 40px; background-color: #f0f0f0; text-align: center;">
-    <h2 style="color: blue; margin-bottom: 30px;">कला प्रदर्शन</h2>
-    <div style="max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-        <video controls width="100%" height="auto">
-            <source src="school_tour.mp4" type="video/mp4">
-            आपका ब्राउज़र वीडियो टैग का समर्थन नहीं करता है।
-        </video>
-        <p style="margin-top: 15px; font-style: italic; color: #555;">(कला प्रदर्शन)</p>
-    </div>
+            <h2 style="color: blue; margin-bottom: 30px;">कला प्रदर्शन</h2>
+            <div
+                style="max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                <video controls width="100%" height="auto">
+                    <source src="school_tour.mp4" type="video/mp4">
+                    आपका ब्राउज़र वीडियो टैग का समर्थन नहीं करता है।
+                </video>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">(कला प्रदर्शन)</p>
+            </div>
         </section>
 
-     <section id="notices" class="notices-section">
+        <section id="notices" class="notices-section">
             <h2>सूचनाएँ और घोषणाएँ</h2>
 
             <div class="notice-marquee">
@@ -985,7 +1246,7 @@
         </section>
 
         <section id="admission" class="admission-section">
-            <h2>प्रवेश जानकारी</h2>
+            <h2>प्र प्रवेश जानकारी</h2>
 
             <p><strong>कैसे दाखिला लें?</strong><br> विद्यार्थी विद्यालय में आकर दाखिला ले सकते हैं।</p>
 
@@ -1000,7 +1261,8 @@
             </p>
 
             <p><strong>नोट:</strong><br>
-                - विद्यालय में कोई भी फीस नहीं ली जाती है। सरकार द्वारा DBT के माध्यम से ₹1200 प्रति वर्ष छात्र को दिया जाता है।
+                - विद्यालय में कोई भी फीस नहीं ली जाती है। सरकार द्वारा DBT के माध्यम से ₹1200 प्रति वर्ष छात्र को दिया
+                जाता है।
             </p>
 
             <div class="admission-contact">
@@ -1016,25 +1278,27 @@
             <p>आप हमें ईमेल कर सकते हैं: <a href="mailto:rabupuraa1@gmail.com">rabupuraa1@gmail.com</a></p>
 
             <h3>फीडबैक फॉर्म</h3>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScVNi1c0XOECO0BzN5r2LgDWHXxnI83TcrpXN693sX-huXeKA/viewform?embedded=true" width="640" height="831" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                
-        <footer id="footer" class="footer-section">
-            <div class="footer-content">
-                <p>&copy; 2025 PS Rabupura 1 Jewar. All Rights Reserved.</p>
-                <p>
-                    Designed by
-                    <a target="_blank" style="color: yellow; font-weight: bold;">
-                        CHHAMA RANI SINGH Assistant Teacher Rabupura 1
-                    </a>
-                </p>
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLScVNi1c0XOECO0BzN5r2LgDWHXxnI83TcrpXN693sX-huXeKA/viewform?embedded=true"
+                width="640" height="831" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
-                <div class="social-media">
-                    <a href="https://facebook.com" target="_blank">Facebook</a> |
-                    <a href="https://twitter.com" target="_blank">Twitter</a> |
-                    <a href="https://instagram.com" target="_blank">Instagram</a>
+            <footer id="footer" class="footer-section">
+                <div class="footer-content">
+                    <p>&copy; 2025 PS Rabupura 1 Jewar. All Rights Reserved.</p>
+                    <p>
+                        Designed by
+                        <a target="_blank" style="color: yellow; font-weight: bold;">
+                            CHHAMA RANI SINGH Assistant Teacher Rabupura 1
+                        </a>
+                    </p>
+
+                    <div class="social-media">
+                        <a href="https://facebook.com" target="_blank">Facebook</a> |
+                        <a href="https://twitter.com" target="_blank">Twitter</a> |
+                        <a href="https://instagram.com" target="_blank">Instagram</a>
+                    </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
     </div>
     <script>
         function updateDateTime() {
@@ -1117,3 +1381,7 @@
 </body>
 
 </html>
+
+
+        
+                        
